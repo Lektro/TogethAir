@@ -14,10 +14,12 @@ public class Flight {
     @Column(nullable = false)
     private Long basePrice;
 
-    @Column(nullable = false)
+    @Column
+    @Transient
     private transient Airport departureAirport;
 
-    @Column(nullable = false)
+    @Column
+    @Transient
     private transient Airport arrivalAirport;
 
     @Column(nullable = false)

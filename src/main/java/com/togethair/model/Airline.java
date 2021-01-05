@@ -3,6 +3,7 @@ package com.togethair.model;
 //extra info about the specific airline companies
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "airline", schema = "togethair")
@@ -18,6 +19,9 @@ public class Airline {
 
     @Column(length = 256)
     private String companyDetails;
+
+    @OneToMany
+    Set<Ticket> ticketSet;
 
     public Airline(Long id, String name) {
         this.id = id;
@@ -49,6 +53,14 @@ public class Airline {
 
     public void setCompanyDetails(String companyDetails) {
         this.companyDetails = companyDetails;
+    }
+
+    public Set<Ticket> getTicketSet() {
+        return ticketSet;
+    }
+
+    public void setTicketSet(Set<Ticket> ticketSet) {
+        this.ticketSet = ticketSet;
     }
 
     @Override

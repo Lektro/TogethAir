@@ -2,6 +2,7 @@ package com.togethair.model;
 
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 // ticket or reservation not sure, we need to add multiple seats for one booking
 @Entity
@@ -13,9 +14,8 @@ public class Ticket {
     @Column(updatable = false, nullable = false)
     private Long id;
 
-    @Column(length = 100)
-    @Transient
-    private transient Airline airline;
+    @ManyToOne
+    private Airline airline;
 
     @Column(length = 100)
     @Transient

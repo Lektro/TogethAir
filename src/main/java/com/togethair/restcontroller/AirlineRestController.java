@@ -2,13 +2,8 @@ package com.togethair.restcontroller;
 
 import com.sun.istack.NotNull;
 import com.togethair.model.Airline;
-import com.togethair.model.Ticket;
 import com.togethair.service.AirlineService;
-import com.togethair.service.AirlineServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api")

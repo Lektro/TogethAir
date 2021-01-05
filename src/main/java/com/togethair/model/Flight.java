@@ -16,6 +16,8 @@ public class Flight {
 
     @Column
     @Transient
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "airport_id")
     private transient Airport departureAirport;
 
     @Column
@@ -25,15 +27,21 @@ public class Flight {
     @Column(nullable = false)
     private Long flightDuration;
 
-/*    @Column
-    @ManyToOne(fetch = FetchType.LAZY)
-    //@JoinColumn(name="airport_id")
-    private Airport departureAirport;
+    public Long getId() {
+        return id;
+    }
 
-    @Column
-    @ManyToOne(fetch = FetchType.LAZY)
-    //@JoinColumn(name="airport_id")
-    private Airport arrivalAirport;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getBasePrice() {
+        return basePrice;
+    }
+
+    public void setBasePrice(Long basePrice) {
+        this.basePrice = basePrice;
+    }
 
     public Airport getDepartureAirport() {
         return departureAirport;
@@ -49,5 +57,13 @@ public class Flight {
 
     public void setArrivalAirport(Airport arrivalAirport) {
         this.arrivalAirport = arrivalAirport;
-    }*/
+    }
+
+    public Long getFlightDuration() {
+        return flightDuration;
+    }
+
+    public void setFlightDuration(Long flightDuration) {
+        this.flightDuration = flightDuration;
+    }
 }

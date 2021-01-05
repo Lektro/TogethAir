@@ -1,6 +1,8 @@
 package com.togethair.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "airport", schema = "togethair")
@@ -19,6 +21,9 @@ public class Airport {
 
     @Column(nullable = false,length = 100)
     private String region;
+
+    @OneToMany
+    private List<Flight> listFlights = new ArrayList<>();
 
     public Airport() {
     }

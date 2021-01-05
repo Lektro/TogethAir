@@ -2,7 +2,8 @@ package com.togethair.model;
 
 import javax.persistence.*;
 
-@Entity(name = "airport")
+@Entity
+@Table(name = "airport")
 public class Airport {
 
     @Id

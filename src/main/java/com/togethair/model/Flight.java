@@ -14,11 +14,10 @@ public class Flight {
     @Column(nullable = false)
     private Long basePrice;
 
-    @Column
-    @Transient
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @JoinColumn(name = "airport_id")
-    private transient Airport departureAirport;
+    // oops these names need to change
+    @ManyToOne
+    @JoinColumn(name="airport_id", nullable=false)
+    private Airport departureAirport;
 
     @Column
     @Transient

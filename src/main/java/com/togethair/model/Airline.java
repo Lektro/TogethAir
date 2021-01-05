@@ -21,7 +21,7 @@ public class Airline {
     private String companyDetails;
 
     @OneToMany
-    Set<Ticket> ticketSet;
+    private Set<Ticket> ticketSet;
 
     public Airline(Long id, String name) {
         this.id = id;

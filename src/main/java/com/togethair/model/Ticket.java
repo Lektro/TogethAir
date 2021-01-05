@@ -17,6 +17,9 @@ public class Ticket {
     @ManyToOne
     private Airline airline;
 
+    @OneToOne
+    private  Flight flight;
+
     @Column(length = 100)
     @Transient
     private transient Airport departureAirport;
@@ -76,6 +79,14 @@ public class Ticket {
 
     public void setFlightDuration(Flight flightDuration) {
         this.flightDuration = flightDuration;
+    }
+
+    public Flight getFlight() {
+        return flight;
+    }
+
+    public void setFlight(Flight flight) {
+        this.flight = flight;
     }
 
     @Override

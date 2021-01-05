@@ -21,7 +21,7 @@ public class Flight {
     private transient Airport arrivalAirport;
 
     @Column(nullable = false)
-    private Long estimatedFlightDuration;
+    private Long flightDuration;
 
 /*    @Column
     @ManyToOne(fetch = FetchType.LAZY)

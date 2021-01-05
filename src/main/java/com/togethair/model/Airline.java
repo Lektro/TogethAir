@@ -26,4 +26,37 @@ public class Airline {
 
     public Airline() {
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCompanyDetails() {
+        return companyDetails;
+    }
+
+    public void setCompanyDetails(String companyDetails) {
+        this.companyDetails = companyDetails;
+    }
+
+    @Override
+    public String toString() {
+        return "Airline{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", companyDetails='" + companyDetails + '\'' +
+                '}';
+    }
 }

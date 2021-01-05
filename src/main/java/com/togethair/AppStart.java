@@ -21,7 +21,5 @@ public class AppStart {
                 airlineService.save(new Airline(1L,"KLM"));
             };
         }
-
-
-    }
+}
 

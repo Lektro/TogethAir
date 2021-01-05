@@ -21,8 +21,8 @@ public class AirlineRestController {
 
     @GetMapping(value = {"/airlines"})
     public @NotNull
-    Iterable<Airline> getAirlines() {
-        return airlineService.getAllAirlines();
+    Iterable<Airline> all() {
+        return airlineService.findAll();
     }
 
     @PostMapping("/createAirlines")

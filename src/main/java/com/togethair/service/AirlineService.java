@@ -10,4 +10,6 @@ public interface AirlineService {
     // these functions are probably not needed in final design because the data comes from the external companies, used for mocks and tests
     Iterable<Airline> createAirLine();
     Airline save (Airline airline);
+
+    Iterable<Airline> findAll();
 }

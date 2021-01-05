@@ -19,13 +19,15 @@ public class AirlineServiceImpl implements AirlineService {
         return airlineRepository.findAll();
     }
 
-    @Override
     public Iterable<Airline> createAirLine() {
         return null;
     }
 
-    @Override
     public Airline save(Airline airline) {
         return airline;
+    }
+
+    public Iterable<Airline> findAll() {
+        return airlineRepository.findAll();
     }
 }

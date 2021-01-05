@@ -3,7 +3,7 @@ package com.togethair.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "airport")
+@Table(name = "airport", schema = "togethair")
 public class Airport {
 
     @Id
@@ -19,4 +19,8 @@ public class Airport {
 
     @Column(nullable = false,length = 100)
     private String region;
+
+    public Airport() {
+    }
+
 }

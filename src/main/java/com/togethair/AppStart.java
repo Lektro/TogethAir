@@ -18,7 +18,10 @@ public class AppStart {
         @Bean
         CommandLineRunner runner(AirlineService airlineService) {
             return args -> {
+
+                //not saving
                 airlineService.save(new Airline(1L,"KLM"));
+
             };
         }
 }

@@ -15,15 +15,12 @@ public class TicketServiceImpl implements TicketService {
         this.ticketRepository = ticketRepository;
     }
 
-    public Iterable<Ticket> getAllTickets() { return ticketRepository.findAll(); }
-
     @Override
-    public Iterable<Ticket> createTicket() {
-        return null;
+    public Iterable<Ticket> getAllTickets() {
+        return ticketRepository.findAll();
     }
 
-    @Override
     public Ticket save(Ticket ticket) {
-        return null;
+        return ticket;
     }
 }

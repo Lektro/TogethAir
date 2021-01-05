@@ -14,19 +14,20 @@ public class Ticket {
     private Long id;
 
     @Column(length = 100)
+    @Transient
     private transient Airline airline;
 
     @Column(length = 100)
     @Transient
-    private Airport departureAirport;
+    private transient Airport departureAirport;
 
     @Column(length = 100)
     @Transient
-    private Airport arrivalAirport;
+    private transient Airport arrivalAirport;
 
     @Column(length = 100)
     @Transient
-    private Flight flightDuration;
+    private transient Flight flightDuration;
 
     public Ticket () {}
 

@@ -13,14 +13,11 @@ public class TicketRestController {
 
     private final TicketService ticketService;
 
-    @Autowired
     public TicketRestController (TicketService ticketService){ this.ticketService = ticketService; }
 
     @GetMapping(value = {"/tickets"})
-    public @NotNull
-    Iterable<Ticket> getTickets() {
-        Iterable<Ticket> listTickets = ticketService.getAllTickets();
-        return listTickets;
+    public @NotNull Iterable<Ticket> getTickets() {
+       return ticketService.getAllTickets();
     }
 
     @PostMapping("/createTickets")

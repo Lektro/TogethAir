@@ -23,15 +23,8 @@ public class AirlineServiceImpl implements AirlineService {
 
     }
 
-    @Override
-    public Optional<Airline> getAirline(Long id) {
-        return airlineRepository.findById(id);
-
-    }
-
     public Airline save(Airline airline) {
         return airline;
     }
-
 
 }

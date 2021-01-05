@@ -1,0 +1,15 @@
+### custom entry to ignore IDE specific maps ###
+### IntelliJ ###
+*.iml
+modules.xml
+.idea/*
+/target
+
+### Eclipse ###
+.classpath
+.project
+
+### Visual Studio Code ###
+.settings/
+.vscode/
+

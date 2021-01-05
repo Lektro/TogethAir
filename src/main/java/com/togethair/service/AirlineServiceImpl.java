@@ -1,7 +1,6 @@
 package com.togethair.service;
 
 import com.togethair.model.Airline;
-import com.togethair.model.Ticket;
 import com.togethair.repository.AirlineRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,12 +20,12 @@ public class AirlineServiceImpl implements AirlineService {
     }
 
     @Override
-    public Iterable<Ticket> createAirLine() {
+    public Iterable<Airline> createAirLine() {
         return null;
     }
 
     @Override
-    public Ticket save(Ticket ticket) {
-        return null;
+    public Airline save(Airline airline) {
+        return airline;
     }
 }

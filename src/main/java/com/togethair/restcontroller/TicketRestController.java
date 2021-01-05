@@ -16,13 +16,13 @@ public class TicketRestController {
     @Autowired
     public TicketRestController (TicketService ticketService){ this.ticketService = ticketService; }
 
-    @GetMapping(value = {"","/"})
+    @GetMapping(value = {"/tickets"})
     public @NotNull
     Iterable<Ticket> getTickets() {
         Iterable<Ticket> listTickets = ticketService.getAllTickets();
         return listTickets;
     }
 
-    @PostMapping("/tickets")
+    @PostMapping("/createTickets")
     public Ticket createTicket(@RequestBody Ticket ticket) {return ticketService.save(ticket); }
 }

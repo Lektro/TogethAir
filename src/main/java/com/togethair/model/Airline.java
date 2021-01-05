@@ -16,8 +16,14 @@ public class Airline {
     @Column(nullable = false,length = 100)
     private String name;
 
-    @Column(nullable = false,length = 256)
+    @Column(length = 256)
     private String companyDetails;
 
+    public Airline(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
+    public Airline() {
+    }
 }

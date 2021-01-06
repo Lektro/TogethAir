@@ -13,7 +13,6 @@ public class FlightServiceImpl implements FlightService {
 
     public FlightServiceImpl(FlightRepository flightRepository) { this.flightRepository = flightRepository ;}
 
-
     @Override
     public Iterable<Flight> getAllFlights() {
         return flightRepository.findAll();

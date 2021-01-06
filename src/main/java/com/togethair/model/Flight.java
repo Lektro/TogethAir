@@ -16,12 +16,12 @@ public class Flight {
 
     // oops these names need to change
     @ManyToOne
-    @JoinColumn(name="airport_id", nullable=false)
+    @JoinColumn(name="fk_departureAirport_id")
     private Airport departureAirport;
 
-    @Column
-    @Transient
-    private transient Airport arrivalAirport;
+    @ManyToOne
+    @JoinColumn(name="fk_arrivalAirport_id")
+    private Airport arrivalAirport;
 
     @Column(nullable = false)
     private Long flightDuration;

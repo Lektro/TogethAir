@@ -42,6 +42,9 @@ public class Flight {
     @Column
     private int economyClassSeats;
 
+    @Column(nullable = false)
+    private String flightNumber;
+
     public Long getId() {
         return id;
     }
@@ -120,5 +123,13 @@ public class Flight {
 
     public void setEconomyClassSeats(int economyClassSeats) {
         this.economyClassSeats = economyClassSeats;
+    }
+
+    public String getFlightNumber() {
+        return flightNumber;
+    }
+
+    public void setFlightNumber(String flightNumber) {
+        this.flightNumber = flightNumber;
     }
 }

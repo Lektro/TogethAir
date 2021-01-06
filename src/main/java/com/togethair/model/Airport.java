@@ -13,6 +13,9 @@ public class Airport {
     @Column(updatable = false, nullable = false)
     private Long id;
 
+    @Column(nullable = false,length = 3)
+    private String airportCode;
+
     @Column(nullable = false,length = 100)
     private String name;
 
@@ -34,6 +37,14 @@ public class Airport {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getAirportCode() {
+        return airportCode;
+    }
+
+    public void setAirportCode(String airportCode) {
+        this.airportCode = airportCode;
     }
 
     public String getName() {
@@ -58,5 +69,13 @@ public class Airport {
 
     public void setRegion(String region) {
         this.region = region;
+    }
+
+    public List<Flight> getListFlights() {
+        return listFlights;
+    }
+
+    public void setListFlights(List<Flight> listFlights) {
+        this.listFlights = listFlights;
     }
 }

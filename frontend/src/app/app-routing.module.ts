@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FlightListComponent } from './flight-list/flight-list.component';
 
 const routes: Routes = [
-    {path: 'api/flights', component: FlightListComponent }
+    { path: 'flights', component: FlightListComponent }
 ];
 
 @NgModule({

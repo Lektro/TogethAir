@@ -1,0 +1,22 @@
+<p>flight-list works!</p>
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">ID</th>
+        <th scope="col">Base Price</th>
+        <th scope="col">Flight Number</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let flight of flights">
+        <td>{{ flight.id }}</td>
+        <td>{{ flight.basePrice }}</td>
+        <td>{{ flight.flightNumber }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

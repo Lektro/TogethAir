@@ -15,7 +15,7 @@ public class AppStart {
         SpringApplication.run(AppStart.class, args);
         }
 
-        @Bean
+/*        @Bean
         CommandLineRunner runner(AirlineService airlineService) {
             return args -> {
 
@@ -23,6 +23,6 @@ public class AppStart {
                 airlineService.save(new Airline(1L,"KLM"));
 
             };
-        }
+        }*/
 }
 

@@ -20,9 +20,11 @@ public class Airline {
     @Column(length = 256)
     private String companyDetails;
 
+    // useful later on but not sure about prototype
     @OneToMany
     private Set<Ticket> ticketSet;
 
+    // useful later on but not sure about prototype
     @OneToMany
     private Set<Flight> flightSet;
 

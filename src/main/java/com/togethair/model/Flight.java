@@ -30,15 +30,17 @@ public class Flight {
     @JoinColumn(name="fk_airline_id")
     private Airline airline;
 
+    // vital for prototype
     @Column
     private int totalSeats;
 
+    // placeholders
     @Column
     private int firstClassSeats;
-
+    // placeholders
     @Column
     private int businessClassSeats;
-
+    // placeholders
     @Column
     private int economyClassSeats;
 

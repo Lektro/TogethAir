@@ -7,11 +7,11 @@
         <th scope="col">ID</th>
         <th scope="col">Base Price</th>
         <th scope="col">Flight Number</th>
+        <th scope="col">Flight Duration</th>
+        <th scope="col">Total Seats</th>
         <th scope="col">Departure Airport</th>
         <th scope="col">Arrival Airport</th>
-        <th scope="col">Flight Duration</th>
         <th scope="col">Airline</th>
-        <th scope="col">Total Seats</th>
       </tr>
       </thead>
       <tbody>
@@ -19,11 +19,11 @@
         <td>{{ flight.id }}</td>
         <td>{{ flight.basePrice }}</td>
         <td>{{ flight.flightNumber }}</td>
+        <td>{{ flight.flightDuration }}</td>
+        <td>{{ flight.totalSeats }}</td>
         <td>{{ flight.departureAirport | json }}</td>
         <td>{{ flight.arrivalAirport | json }}</td>
-        <td>{{ flight.flightDuration }}</td>
         <td>{{ flight.airline | json }}</td>
-        <td>{{ flight.totalSeats }}</td>
 
       </tr>
       </tbody>

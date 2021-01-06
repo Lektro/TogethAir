@@ -1,5 +1,4 @@
-<p>flight-list works!</p>
-<div class="card my-5">
+<div class="card">
   <div class="card-body">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
@@ -12,6 +11,7 @@
         <th scope="col">Departure Airport</th>
         <th scope="col">Arrival Airport</th>
         <th scope="col">Airline</th>
+        <th scope="col">Actions</th>
       </tr>
       </thead>
       <tbody>
@@ -24,7 +24,7 @@
         <td>{{ flight.departureAirport | json }}</td>
         <td>{{ flight.arrivalAirport | json }}</td>
         <td>{{ flight.airline | json }}</td>
-
+        <a routerLink="/bookings" class="btn btn-info">Book This Flight</a>
       </tr>
       </tbody>
     </table>

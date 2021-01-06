@@ -16,4 +16,7 @@ export class FlightService {
       return this.http.get(this.flightsUrl);
     }
 
+    public save(flight: Flight) {
+      return this.http.post<Flight>(this.flightsUrl, flight);
+    }
 }

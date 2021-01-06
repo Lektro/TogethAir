@@ -20,6 +20,7 @@ public class Airline {
     @Column(length = 256)
     private String companyDetails;
 
+/*
     // useful later on but not sure about prototype
     @OneToMany
     private Set<Ticket> ticketSet;
@@ -27,6 +28,7 @@ public class Airline {
     // useful later on but not sure about prototype
     @OneToMany
     private Set<Flight> flightSet;
+*/
 
     public Airline(Long id, String name) {
         this.id = id;
@@ -60,6 +62,7 @@ public class Airline {
         this.companyDetails = companyDetails;
     }
 
+/*
     public Set<Ticket> getTicketSet() {
         return ticketSet;
     }
@@ -75,6 +78,7 @@ public class Airline {
     public void setFlightSet(Set<Flight> flightSet) {
         this.flightSet = flightSet;
     }
+*/
 
     @Override
     public String toString() {

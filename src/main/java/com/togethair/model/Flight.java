@@ -23,7 +23,7 @@ public class Flight {
     @JoinColumn(name="fk_arrivalAirport_id")
     private Airport arrivalAirport;
 
-    @Column(nullable = false)
+    @Column()
     private Long flightDuration;
 
     @ManyToOne
@@ -44,7 +44,7 @@ public class Flight {
     @Column
     private int economyClassSeats;
 
-    @Column(nullable = false)
+    @Column()
     private String flightNumber;
 
     public Long getId() {

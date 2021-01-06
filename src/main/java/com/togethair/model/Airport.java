@@ -25,11 +25,15 @@ public class Airport {
     @Column(nullable = false,length = 100)
     private String region;
 
+    // may be a bit too much
+/*
     @OneToMany
     private List<Flight> listFlights = new ArrayList<>();
+*/
 
     public Airport() {
     }
+
 
     public Long getId() {
         return id;
@@ -71,11 +75,11 @@ public class Airport {
         this.region = region;
     }
 
-    public List<Flight> getListFlights() {
+/*    public List<Flight> getListFlights() {
         return listFlights;
     }
 
     public void setListFlights(List<Flight> listFlights) {
         this.listFlights = listFlights;
-    }
+    }*/
 }

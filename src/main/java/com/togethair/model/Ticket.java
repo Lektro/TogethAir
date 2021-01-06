@@ -14,7 +14,7 @@ public class Ticket {
     @Column(updatable = false, nullable = false)
     private Long id;
 
-    @ManyToOne
+    @OneToOne
     private Airline airline;
 
     @OneToOne

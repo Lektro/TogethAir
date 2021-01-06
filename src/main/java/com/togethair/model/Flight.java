@@ -14,7 +14,7 @@ public class Flight {
     @Column(nullable = false)
     private Long basePrice;
 
-    // oops these names need to change
+    // I think it works correctly like this
     @ManyToOne
     @JoinColumn(name="fk_departureAirport_id")
     private Airport departureAirport;
@@ -25,6 +25,22 @@ public class Flight {
 
     @Column(nullable = false)
     private Long flightDuration;
+
+    @ManyToOne
+    @JoinColumn(name="fk_airline_id")
+    private Airline airline;
+
+    @Column
+    private int totalSeats;
+
+    @Column
+    private int firstClassSeats;
+
+    @Column
+    private int businessClassSeats;
+
+    @Column
+    private int economyClassSeats;
 
     public Long getId() {
         return id;
@@ -64,5 +80,45 @@ public class Flight {
 
     public void setFlightDuration(Long flightDuration) {
         this.flightDuration = flightDuration;
+    }
+
+    public Airline getAirline() {
+        return airline;
+    }
+
+    public void setAirline(Airline airline) {
+        this.airline = airline;
+    }
+
+    public int getTotalSeats() {
+        return totalSeats;
+    }
+
+    public void setTotalSeats(int totalSeats) {
+        this.totalSeats = totalSeats;
+    }
+
+    public int getFirstClassSeats() {
+        return firstClassSeats;
+    }
+
+    public void setFirstClassSeats(int firstClassSeats) {
+        this.firstClassSeats = firstClassSeats;
+    }
+
+    public int getBusinessClassSeats() {
+        return businessClassSeats;
+    }
+
+    public void setBusinessClassSeats(int businessClassSeats) {
+        this.businessClassSeats = businessClassSeats;
+    }
+
+    public int getEconomyClassSeats() {
+        return economyClassSeats;
+    }
+
+    public void setEconomyClassSeats(int economyClassSeats) {
+        this.economyClassSeats = economyClassSeats;
     }
 }

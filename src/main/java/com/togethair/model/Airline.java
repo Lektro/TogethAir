@@ -23,6 +23,9 @@ public class Airline {
     @OneToMany
     private Set<Ticket> ticketSet;
 
+    @OneToMany
+    private Set<Flight> flightSet;
+
     public Airline(Long id, String name) {
         this.id = id;
         this.name = name;
@@ -61,6 +64,14 @@ public class Airline {
 
     public void setTicketSet(Set<Ticket> ticketSet) {
         this.ticketSet = ticketSet;
+    }
+
+    public Set<Flight> getFlightSet() {
+        return flightSet;
+    }
+
+    public void setFlightSet(Set<Flight> flightSet) {
+        this.flightSet = flightSet;
     }
 
     @Override

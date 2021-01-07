@@ -11,6 +11,7 @@ import { Flight } from '../model/flight';
 export class FlightFormComponent implements OnInit {
 
   flight : Flight;
+  flights : Flight[] =[];
 
   constructor(
       private route: ActivatedRoute,
@@ -26,6 +27,7 @@ export class FlightFormComponent implements OnInit {
   gotoFlightList() {
     this.router.navigate(['/flights']);
   }
+
   ngOnInit(): void {
   }
 

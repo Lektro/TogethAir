@@ -1,3 +1,5 @@
+<h1>Add A New Flight Here</h1>
+
 <div class="card my-5">
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #flightForm="ngForm">
@@ -7,7 +9,7 @@
                class="form-control"
                id="basePrice"
                name="basePrice"
-               placeholder="Enter the flight base price"
+               placeholder="Enter the Base Price"
                required #basePrice="ngModel">
       </div>
       <div [hidden]="!basePrice.valid" class="alert alert-danger" >Price is required</div>
@@ -18,7 +20,7 @@
                class="form-control"
                id="flightNumber"
                name="flightNumber"
-               placeholder="Enter the departure Airport"
+               placeholder="Enter the Flight Number"
                required #flightNumber="ngModel">
       </div>
       <div [hidden]="!flightNumber.valid" class="alert alert-danger" >Flight Number is required</div>
@@ -27,7 +29,7 @@
         <label for="departureAirport">Departure Airport</label>
 
 
-<!--        I need to repeat the actual airports here and not via the flight component in angular-->
+<!--        I need to repeat the actual airports here and not via the flight component in angular -->
           <select ng-model ="flight.flights" id="departureAirport" style="width: 100%;">
             <option value="">Select Departure Airport</option>
             <option ng-repeat="flight in flights" value="{{flight.departureAirport}}">{{flight.departureAirport}}</option>

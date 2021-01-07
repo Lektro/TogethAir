@@ -22,7 +22,7 @@ public class FlightRestController {
         return flightService.getAllFlights();
     }
 
-    @PostMapping("/createFlights")
+    @PostMapping("/createFlight")
     public Flight createFlight(@RequestBody Flight flight) {return flightService.save(flight);
     }
 

@@ -3,7 +3,7 @@
     <form (ngSubmit)="onSubmit()" #flightForm="ngForm">
       <div class="form-group">
         <label for="id">ID</label>
-        <input type="number" [(ngModel)]="flight.id"
+        <input type="number" [ngModel]="flight.id"
                class="form-control"
                id="id"
                name="id"
@@ -14,7 +14,7 @@
 
       <div class="form-group">
         <label for="basePrice">Base Price</label>
-        <input type="number" [(ngModel)]="flight.basePrice"
+        <input type="number" [ngModel]="flight.basePrice"
                class="form-control"
                id="basePrice"
                name="basePrice"

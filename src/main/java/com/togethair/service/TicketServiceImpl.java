@@ -20,7 +20,8 @@ public class TicketServiceImpl implements TicketService {
         return ticketRepository.findAll();
     }
 
+    @Override
     public Ticket save(Ticket ticket) {
-        return ticket;
+        return ticketRepository.save(ticket);
     }
 }

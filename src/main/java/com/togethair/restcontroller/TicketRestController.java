@@ -21,5 +21,5 @@ public class TicketRestController {
     }
 
     @PostMapping("/createTickets")
-    public Ticket createTicket(@RequestBody Ticket ticket) {return ticketService.save(ticket); }
+    public Ticket createTicket(@RequestBody Ticket ticket) { return ticketService.save(ticket); }
 }

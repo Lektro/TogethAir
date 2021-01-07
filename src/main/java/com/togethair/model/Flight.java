@@ -13,15 +13,14 @@ public class Flight {
 
     @Column(nullable = false)
     private Long basePrice;
-/*
 
     // I think it works correctly like this
     @ManyToOne
-    @JoinColumn(name="fk_departureAirport_id")
+    @JoinColumn(name="fk_departure_airport_id")
     private Airport departureAirport;
 
     @ManyToOne
-    @JoinColumn(name="fk_arrivalAirport_id")
+    @JoinColumn(name="fk_arrival_airport_id")
     private Airport arrivalAirport;
 
     @Column()
@@ -35,19 +34,8 @@ public class Flight {
     @Column
     private int totalSeats;
 
-    // placeholders
-    @Column
-    private int firstClassSeats;
-    // placeholders
-    @Column
-    private int businessClassSeats;
-    // placeholders
-    @Column
-    private int economyClassSeats;
-
     @Column()
     private String flightNumber;
-*/
 
     public Long getId() {
         return id;
@@ -64,7 +52,7 @@ public class Flight {
     public void setBasePrice(Long basePrice) {
         this.basePrice = basePrice;
     }
-/*
+
     public Airport getDepartureAirport() {
         return departureAirport;
     }
@@ -105,35 +93,11 @@ public class Flight {
         this.totalSeats = totalSeats;
     }
 
-    public int getFirstClassSeats() {
-        return firstClassSeats;
-    }
-
-    public void setFirstClassSeats(int firstClassSeats) {
-        this.firstClassSeats = firstClassSeats;
-    }
-
-    public int getBusinessClassSeats() {
-        return businessClassSeats;
-    }
-
-    public void setBusinessClassSeats(int businessClassSeats) {
-        this.businessClassSeats = businessClassSeats;
-    }
-
-    public int getEconomyClassSeats() {
-        return economyClassSeats;
-    }
-
-    public void setEconomyClassSeats(int economyClassSeats) {
-        this.economyClassSeats = economyClassSeats;
-    }
-
     public String getFlightNumber() {
         return flightNumber;
     }
 
     public void setFlightNumber(String flightNumber) {
         this.flightNumber = flightNumber;
-    }*/
+    }
 }

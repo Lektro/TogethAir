@@ -10,7 +10,7 @@ import { FlightService } from '../service/flight.service';
 
 export class FlightListComponent implements OnInit {
 
-  flights : Flight[] = [];
+  flights : Flight[] =[];
 
   constructor(private flightService: FlightService) { }
 

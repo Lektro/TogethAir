@@ -13,6 +13,7 @@ public class Flight {
 
     @Column(nullable = false)
     private Long basePrice;
+/*
 
     // I think it works correctly like this
     @ManyToOne
@@ -46,6 +47,7 @@ public class Flight {
 
     @Column()
     private String flightNumber;
+*/
 
     public Long getId() {
         return id;
@@ -62,7 +64,7 @@ public class Flight {
     public void setBasePrice(Long basePrice) {
         this.basePrice = basePrice;
     }
-
+/*
     public Airport getDepartureAirport() {
         return departureAirport;
     }
@@ -133,5 +135,5 @@ public class Flight {
 
     public void setFlightNumber(String flightNumber) {
         this.flightNumber = flightNumber;
-    }
+    }*/
 }

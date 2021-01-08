@@ -21,9 +21,24 @@
         <td>{{ flight.flightNumber }}</td>
         <td>{{ flight.flightDuration }}</td>
         <td>{{ flight.totalSeats }}</td>
-        <td>{{ flight.departureAirport | json }}</td>
+        <td>{{ flight.departureAirport | json  }}</td>
         <td>{{ flight.arrivalAirport | json }}</td>
         <td>{{ flight.airline | json }}</td>
+        <a routerLink="/tickets" class="btn btn-info">Order Ticket</a>
+      </tr>
+      </tbody>
+
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Departure Airport</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let airport of airports">
+        <td>{{ airport.id }}</td>
+        <td>{{ airport.name }}</td>
         <a routerLink="/tickets" class="btn btn-info">Order Ticket</a>
       </tr>
       </tbody>

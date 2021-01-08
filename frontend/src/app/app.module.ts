@@ -7,12 +7,15 @@ import { AppComponent } from './app.component';
 import { FlightListComponent } from './flight-list/flight-list.component';
 import { FlightFormComponent } from './flight-form/flight-form.component';
 import { FlightService } from './service/flight.service';
+import { AirportListComponent } from './airport-list/airport-list.component';
+import {AirportService} from "./service/airport.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     FlightListComponent,
-    FlightFormComponent
+    FlightFormComponent,
+    AirportListComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,7 @@ import { FlightService } from './service/flight.service';
     FormsModule
 
   ],
-  providers: [FlightService],
+  providers: [FlightService, AirportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

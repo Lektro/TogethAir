@@ -15,20 +15,19 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let flight of flights">
+      <tr *ngFor="let flight of flights" >
         <td>{{ flight.id }}</td>
         <td>{{ flight.basePrice }}</td>
         <td>{{ flight.flightNumber }}</td>
         <td>{{ flight.flightDuration }}</td>
         <td>{{ flight.totalSeats }}</td>
-        <td>{{ flight.departureAirport | json  }}</td>
-        <td>{{ flight.arrivalAirport | json }}</td>
+        <td *ngFor="let airport of airports">{{ airport.name }}</td>
         <td>{{ flight.airline | json }}</td>
         <a routerLink="/tickets" class="btn btn-info">Order Ticket</a>
       </tr>
       </tbody>
 
-      <thead class="thead-dark">
+<!--      <thead class="thead-dark">
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Departure Airport</th>
@@ -39,9 +38,8 @@
       <tr *ngFor="let airport of airports">
         <td>{{ airport.id }}</td>
         <td>{{ airport.name }}</td>
-        <a routerLink="/tickets" class="btn btn-info">Order Ticket</a>
       </tr>
-      </tbody>
+      </tbody>-->
     </table>
   </div>
 </div>

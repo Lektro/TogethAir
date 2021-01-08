@@ -11,7 +11,7 @@ export class AirportService {
   private airportUrl: string;
 
   constructor(private http: HttpClient) {
-    this.airportUrl = 'http://localhost:8080/airports';
+    this.airportUrl = 'http://localhost:8080/api/airports';
   }
 
   public findAll(): Observable<Airport[]> {

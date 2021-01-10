@@ -22,6 +22,8 @@
         <td>{{ flight.flightDuration }}</td>
         <td>{{ flight.totalSeats }}</td>
         <td *ngFor="let airport of airports">{{ airport.name }}</td>
+        <td>{{ flight.fk_departure_airport_id }}</td>
+        <td>{{ flight.fk_arrival_airport_id }}</td>
         <td>{{ flight.airline | json }}</td>
         <a routerLink="/tickets" class="btn btn-info">Order Ticket</a>
       </tr>

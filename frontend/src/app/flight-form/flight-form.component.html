@@ -32,7 +32,7 @@
 <!--        I need to repeat the actual airports here and not via the flight component in angular -->
           <select ng-model ="flight" id="departureAirport" style="width: 100%;">
             <option value="">Select Departure Airport</option>
-            <option ng-repeat="flight in flights" value="{{flight.departureAirport}}">{{flight.departureAirport}}</option>
+            <option ng-repeat="flight in flights" value="{{flight.fk_departure_airport_id}}">{{flight.fk_departure_airport_id}}</option>
           </select>
       </div>
 

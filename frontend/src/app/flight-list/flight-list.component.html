@@ -21,26 +21,14 @@
         <td>{{ flight.flightNumber }}</td>
         <td>{{ flight.flightDuration }}</td>
         <td>{{ flight.totalSeats }}</td>
-        <td>{{ flight.departureAirport.name }}</td>
-        <td>{{ flight.arrivalAirport.name }}</td>
+<!--        *ngIf only displays on actual value's and otherwise skips check happens on front end part -->
+<!--        ternary if statement to display a default value if departureAirport equals undefined-->
+        <td >{{ flight.departureAirport != undefined ? flight.departureAirport.name : "N/A" }}</td>
+        <td *ngIf="flight.arrivalAirport">{{ flight.arrivalAirport.name }}</td>
         <td>{{ flight.airline.name }}</td>
         <a routerLink="/tickets" class="btn btn-info">Order Ticket</a>
       </tr>
       </tbody>
-
-<!--      <thead class="thead-dark">
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Departure Airport</th>
-        <th scope="col">Actions</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let airport of airports">
-        <td>{{ airport.id }}</td>
-        <td>{{ airport.name }}</td>
-      </tr>
-      </tbody>-->
     </table>
   </div>
 </div>

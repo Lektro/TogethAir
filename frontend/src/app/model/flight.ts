@@ -5,7 +5,7 @@ export class Flight {
     basePrice: number | undefined;
     flightNumber: string | undefined;
     // naamgeving moet overeenkomen met je model in java
-    departureAirport : Airport | undefined;
+    departureAirport: Airport | undefined;
     arrivalAirport : Airport | undefined;
     flightDuration: number | undefined;
     airline: any | undefined;

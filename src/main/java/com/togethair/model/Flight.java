@@ -1,5 +1,7 @@
 package com.togethair.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,12 +16,14 @@ public class Flight {
     @Column(nullable = false)
     private Long basePrice;
 
-    // I think it works correctly like this
-    @ManyToOne
+    // I think it works correctly like this refactor on name tho
+    // hibernate native query here
+    @OneToOne
     @JoinColumn(name="fk_departure_airport_id")
+    // Naamgeving moet hetzelfde zijn in je Angular Model
     private Airport departureAirport;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name="fk_arrival_airport_id")
     private Airport arrivalAirport;
 

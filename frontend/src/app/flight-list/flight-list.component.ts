@@ -15,6 +15,7 @@ export class FlightListComponent implements OnInit {
   flights : Flight[] =[];
   airports: Airport[] = [];
 
+
   constructor(private flightService: FlightService, private airportsService: AirportService) { }
 
   ngOnInit() {

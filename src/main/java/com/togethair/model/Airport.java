@@ -25,6 +25,8 @@ public class Airport {
     @Column(nullable = false,length = 100)
     private String region;
 
+
+
     // may be a bit too much
 /*
     @OneToMany

@@ -10,6 +10,7 @@ import { FlightService } from './service/flight.service';
 import { AirportListComponent } from './airport-list/airport-list.component';
 import { AirportService } from "./service/airport.service";
 import { AirlineListComponent } from './airline-list/airline-list.component';
+import { AirportFormComponent } from './airport-form/airport-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AirlineListComponent } from './airline-list/airline-list.component';
     AirportListComponent,
     AirlineListComponent,
     // this one needs to be loaded last?
-    FlightFormComponent
+    FlightFormComponent,
+    AirportFormComponent
   ],
   imports: [
     BrowserModule,

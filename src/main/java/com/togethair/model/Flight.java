@@ -16,19 +16,19 @@ public class Flight {
     @Column(nullable = false)
     private Long basePrice;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name="fk_departure_airport_id")
     // Naamgeving moet hetzelfde zijn in je Angular Model
     private Airport departureAirport;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name="fk_arrival_airport_id")
     private Airport arrivalAirport;
 
     @Column()
     private Long flightDuration;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name="fk_airline_id")
     private Airline airline;
 
@@ -38,6 +38,21 @@ public class Flight {
 
     @Column()
     private String flightNumber;
+
+    public Flight () {
+
+    }
+
+    public Flight(Long id, Long basePrice, Airport departureAirport, Airport arrivalAirport, Long flightDuration, Airline airline, int totalSeats, String flightNumber) {
+        this.id = id;
+        this.basePrice = basePrice;
+        this.departureAirport = departureAirport;
+        this.arrivalAirport = arrivalAirport;
+        this.flightDuration = flightDuration;
+        this.airline = airline;
+        this.totalSeats = totalSeats;
+        this.flightNumber = flightNumber;
+    }
 
     public Long getId() {
         return id;

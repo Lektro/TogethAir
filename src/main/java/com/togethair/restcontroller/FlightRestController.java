@@ -23,7 +23,7 @@ public class FlightRestController {
         return flightService.getAllFlights();
     }
 
-    @PostMapping(value = {"/addFlights"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = {"/addFlights"})
     public Flight createFlight(@RequestBody Flight flight) { return flightService.save(flight);
     }
 }

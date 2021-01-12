@@ -65,7 +65,8 @@
 
       <div class="form-group">
         <!--        <label for="arrivalAirport">Arrival Airport</label>-->
-        <select class="custom-select" id="airline" style="width: 100%;">
+<!--        ng model here to select the proper fields in the database model-->
+        <select [(ngModel)]="flight.airline" class="custom-select" id="airline" style="width: 100%;">
           <option value="">Select Airline Company</option>
           <option *ngFor="let airline of airlines" [ngValue]="airline" >{{ airline.name}}</option>
         </select>

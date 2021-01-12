@@ -38,5 +38,11 @@ export class FlightService {
     return this.http.post<Flight>(this.addFlightUrl, flight);
   }
 
+  public create(data: any): Observable<any> {
+    return this.http.post(this.addFlightUrl, data);
+  }
 
+  public findByName(name: any): Observable<Flight[]> {
+    return this.http.get<Flight[]>(`${this.flightsUrl}?name=${name}`);
+  }
 }

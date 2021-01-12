@@ -6,10 +6,11 @@ import { AirportListComponent } from "./airport-list/airport-list.component";
 import { AirlineListComponent } from "./airline-list/airline-list.component";
 
 const routes: Routes = [
+    { path: 'addFlight', component: FlightFormComponent },
     { path: 'flights', component: FlightListComponent },
     { path: 'airports', component: AirportListComponent },
-    { path: 'airlines', component: AirlineListComponent },
-    { path: 'addflight', component: FlightFormComponent }
+    { path: 'airlines', component: AirlineListComponent }
+
 
 ];
 

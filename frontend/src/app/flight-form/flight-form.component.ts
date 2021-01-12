@@ -5,6 +5,7 @@ import {Flight} from '../model/flight';
 import {Airport} from "../model/airport";
 import {AirportService} from "../service/airport.service";
 import {Airline} from "../model/airline";
+import {AirlineService} from "../service/airline.service";
 
 @Component({
   selector: 'app-flight-form',
@@ -14,6 +15,7 @@ import {Airline} from "../model/airline";
 export class FlightFormComponent implements OnInit {
 
   flight: Flight;
+  airline: Airline;
   flights: Flight[] = [];
   airports: Airport[] = [];
   airlines: Airline[] = [];
@@ -23,8 +25,10 @@ export class FlightFormComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private flightService: FlightService,
-    private airportService: AirportService) {
+    private airportService: AirportService,
+    private airlineService: AirlineService) {
     this.flight = new Flight();
+    this.airline = new Airline();
   }
 
   onSubmit() {
@@ -36,7 +40,8 @@ export class FlightFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.airportService.findAll().subscribe(result => this.airports = result)
+      this.airportService.findAll().subscribe(result => this.airports = result),
+      this.airlineService.findAll().subscribe(airlineResult => this.airlines = airlineResult);
   }
 
 }

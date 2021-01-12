@@ -24,10 +24,9 @@
 <!--        *ngIf only displays on actual value's and otherwise skips check happens on front end part -->
 <!--        ternary if statement to display a default value if departureAirport equals undefined-->
 <!--        condition ? exprIfTrue : exprIfFalse-->
-        <td >{{ flight.departureAirport != undefined ? flight.departureAirport.name : "N/A" }}</td>
-        <td >{{ flight.arrivalAirport != undefined ? flight.arrivalAirport.name : "N/A" }}</td>
-
-        <td>{{ flight.airline.name }}</td>
+        <td >{{ flight.departureAirport != undefined ? flight.departureAirport.name : "Departure N/A" }}</td>
+        <td >{{ flight.arrivalAirport != undefined ? flight.arrivalAirport.name : "Arrival N/A" }}</td>
+        <td>{{ flight.airline!= undefined ? flight.airline :"Airline N/A" }}</td>
         <a routerLink="/tickets" class="btn btn-info">Order Ticket</a>
       </tr>
       </tbody>

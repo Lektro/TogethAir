@@ -3,6 +3,7 @@ package com.togethair.restcontroller;
 import com.sun.istack.NotNull;
 import com.togethair.model.Flight;
 import com.togethair.service.FlightService;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,7 +23,7 @@ public class FlightRestController {
         return flightService.getAllFlights();
     }
 
-    @PostMapping("/createFlights")
-    public Flight createFlight(@RequestBody Flight flight) {return flightService.save(flight);
+    @PostMapping(value = {"/addFlights"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Flight createFlight(@RequestBody Flight flight) { return flightService.save(flight);
     }
 }

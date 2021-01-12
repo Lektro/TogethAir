@@ -20,4 +20,8 @@ export class AirlineService {
     public save(airline: Airline) {
       return this.http.post<Airline>(this.airlineUrl, airline);
     }
+
+    public findAllAirlines(): Observable<Airline[]> {
+      return this.http.get<Airline[]>(this.airlineUrl);
+    }
 }

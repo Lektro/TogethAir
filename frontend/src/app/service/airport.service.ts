@@ -8,7 +8,7 @@ import {Airport} from "../model/airport";
 })
 export class AirportService {
 
-  private airportUrl: string;
+  private readonly airportUrl: string;
 
   constructor(private http: HttpClient) {
     this.airportUrl = 'http://localhost:8080/api/airports';
@@ -20,6 +20,9 @@ export class AirportService {
 
   public save(airport: Airport) {
     return this.http.post<Airport>(this.airportUrl, airport);
+  }
+  public findAllAirports(): Observable<Airport[]> {
+    return this.http.get<Airport[]>(this.airportUrl);
   }
 
 }

@@ -28,7 +28,7 @@ public class Flight {
     @Column()
     private Long flightDuration;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     @JoinColumn(name="fk_airline_id")
     private Airline airline;
 

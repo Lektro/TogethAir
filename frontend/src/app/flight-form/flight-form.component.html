@@ -2,8 +2,9 @@
 <div class="card ">
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #flightForm="ngForm">
+
       <div class="form-group">
-        <label for="basePrice">Base Price</label>
+<!--        <label for="basePrice">Base Price</label>-->
         <input type="number" [(ngModel)]="flight.basePrice"
                class="form-control"
                id="basePrice"
@@ -14,7 +15,7 @@
       <div *ngIf="basePrice.invalid && (basePrice.dirty || basePrice.touched)" class="alert alert-danger" >Price is required</div>
 
       <div class="form-group">
-        <label for="flightNumber">Flight Number</label>
+<!--        <label for="flightNumber">Flight Number</label>-->
         <input type="number" [(ngModel)]="flight.flightNumber"
                class="form-control"
                id="flightNumber"
@@ -22,15 +23,54 @@
                placeholder="Enter the Flight Number"
                required #flightNumber="ngModel">
       </div>
-      <div [hidden]="flightNumber.valid" class="alert alert-danger" >Flight Number is required</div>
+      <div *ngIf="flightNumber.invalid && (flightNumber.dirty || flightNumber.touched)" class="alert alert-danger" >Flight Number is required</div>
 
       <div class="form-group">
-        <label for="departureAirport">Departure Airport</label>
+<!--        <label for="flightDuration">Flight Duration</label>-->
+        <input type="number" [(ngModel)]="flight.flightDuration"
+               class="form-control"
+               id="flightDuration"
+               name="flightDuration"
+               placeholder="Enter the Flight Duration"
+               required #flightDuration="ngModel">
+      </div>
+      <div *ngIf="flightDuration.invalid && (flightDuration.dirty || flightDuration.touched)" class="alert alert-danger" >Flight Duration is required</div>
+
+      <div class="form-group">
+<!--        <label for="totalSeats">Total Seats</label>-->
+        <input type="number" [(ngModel)]="flight.totalSeats"
+               class="form-control"
+               id="totalSeats"
+               name="totalSeats"
+               placeholder="Enter the total Amount of seats"
+               required #totalSeats="ngModel">
+      </div>
+      <div *ngIf="totalSeats.invalid && (totalSeats.dirty || totalSeats.touched)" class="alert alert-danger" >Total Number of seats is required</div>
+
+      <div class="form-group">
+<!--        <label for="departureAirport">Departure Airport</label>-->
           <select class="custom-select" id="departureAirport" style="width: 100%;">
             <option value="">Select Departure Airport</option>
             <option *ngFor="let airport of airports" [ngValue]="airport" >{{ airport.name}}</option>
           </select>
       </div>
+
+      <div class="form-group">
+<!--        <label for="arrivalAirport">Arrival Airport</label>-->
+        <select class="custom-select" id="arrivalAirport" style="width: 100%;">
+          <option value="">Select Arrival Airport</option>
+          <option *ngFor="let airport of airports" [ngValue]="airport" >{{ airport.name}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <!--        <label for="arrivalAirport">Arrival Airport</label>-->
+        <select class="custom-select" id="airline" style="width: 100%;">
+          <option value="">Select Airline Company</option>
+          <option *ngFor="let airline of airlines" [ngValue]="airline" >{{ airline.name}}</option>
+        </select>
+      </div>
+
       <button type="submit" class="btn btn-info">Submit</button>
     </form>
   </div>

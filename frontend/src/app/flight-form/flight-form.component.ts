@@ -4,6 +4,7 @@ import {FlightService} from '../service/flight.service';
 import {Flight} from '../model/flight';
 import {Airport} from "../model/airport";
 import {AirportService} from "../service/airport.service";
+import {Airline} from "../model/airline";
 
 @Component({
   selector: 'app-flight-form',
@@ -15,6 +16,8 @@ export class FlightFormComponent implements OnInit {
   flight: Flight;
   flights: Flight[] = [];
   airports: Airport[] = [];
+  airlines: Airline[] = [];
+
 
   constructor(
     private route: ActivatedRoute,

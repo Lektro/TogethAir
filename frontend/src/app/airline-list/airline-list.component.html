@@ -1,0 +1,21 @@
+
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Airline Name</th>
+        <th scope="col">Company Details</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let airline of airlines">
+        <td>{{ airline.id }}</td>
+        <td>{{ airline.name }}</td>
+        <td>{{ airline.companyDetails }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -16,8 +16,6 @@ public class Flight {
     @Column(nullable = false)
     private Long basePrice;
 
-    // I think it works correctly like this refactor on name tho
-    // hibernate native query here
     @OneToOne
     @JoinColumn(name="fk_departure_airport_id")
     // Naamgeving moet hetzelfde zijn in je Angular Model

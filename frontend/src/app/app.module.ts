@@ -9,13 +9,15 @@ import { FlightFormComponent } from './flight-form/flight-form.component';
 import { FlightService } from './service/flight.service';
 import { AirportListComponent } from './airport-list/airport-list.component';
 import {AirportService} from "./service/airport.service";
+import { AirlineListComponent } from './airline-list/airline-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FlightListComponent,
     FlightFormComponent,
-    AirportListComponent
+    AirportListComponent,
+    AirlineListComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,7 @@ import {AirportService} from "./service/airport.service";
     FormsModule
 
   ],
-  providers: [FlightService, AirportService],
+  providers: [FlightService, AirportService, AirportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import {Airport} from "./airport";
+import {Airline} from "./airline";
 
 export class Flight {
     id: number | undefined;
@@ -8,6 +9,6 @@ export class Flight {
     departureAirport: Airport | undefined;
     arrivalAirport : Airport | undefined;
     flightDuration: number | undefined;
-    airline: any | undefined;
+    airline: Airline | undefined;
     totalSeats: number | undefined;
 }

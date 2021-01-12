@@ -21,6 +21,7 @@ export class AirportService {
   public save(airport: Airport) {
     return this.http.post<Airport>(this.airportUrl, airport);
   }
+
   public findAllAirports(): Observable<Airport[]> {
     return this.http.get<Airport[]>(this.airportUrl);
   }

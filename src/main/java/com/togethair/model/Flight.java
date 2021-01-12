@@ -16,12 +16,13 @@ public class Flight {
     @Column(nullable = false)
     private Long basePrice;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    ook hier is de cascadetype.refresh heel belangrijk
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     @JoinColumn(name="fk_departure_airport_id")
     // Naamgeving moet hetzelfde zijn in je Angular Model
     private Airport departureAirport;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     @JoinColumn(name="fk_arrival_airport_id")
     private Airport arrivalAirport;
 

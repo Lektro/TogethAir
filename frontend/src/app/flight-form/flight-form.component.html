@@ -49,22 +49,22 @@
 
       <div class="form-group">
 <!--        <label for="departureAirport">Departure Airport</label>-->
-          <select class="custom-select" id="departureAirport" style="width: 100%;">
-            <option value="">Select Departure Airport</option>
-            <option *ngFor="let airport of airports" [ngValue]="airport" >{{ airport.name}}</option>
+          <select [(ngModel)]="flight.departureAirport" class="custom-select" id="departureAirport" name="departureAirport" style="width: 100%;">
+            <option disabled value="undefined">Select Departure Airport</option>
+            <option *ngFor="let airport of airports" [ngValue]="airport" >{{ airport.name }}</option>
           </select>
       </div>
 
       <div class="form-group">
 <!--        <label for="arrivalAirport">Arrival Airport</label>-->
-        <select class="custom-select" id="arrivalAirport" style="width: 100%;">
-          <option value="">Select Arrival Airport</option>
+        <select [(ngModel)]="flight.arrivalAirport "class="custom-select" id="arrivalAirport" name="arrivalAirport" style="width: 100%;">
+          <option disabled value="undefined">Select Arrival Airport</option>
           <option *ngFor="let airport of airports" [ngValue]="airport" >{{ airport.name}}</option>
         </select>
       </div>
 
       <div class="form-group">
-                <label for="arrivalAirport">Select Airline Company</label>
+<!--                <label for="arrivalAirport">Select Airline Company</label>-->
 <!--        ng model  en name attribute NEEDED here to select the proper fields in the database model-->
         <select [(ngModel)]="flight.airline" class="custom-select" id="airline" name="airline" style="width: 100%;">
           <option disabled value="undefined">Select Airline Company</option>

@@ -44,6 +44,11 @@ export class FlightService {
     return this.http.post(this.addFlightUrl, data);
   }
 
+  // mooi voorbeeld om maar 1 url te gebruiken in uw back end
+  public delete(data: any): Observable<any> {
+    return this.http.delete(this.flightsUrl, data);
+  }
+
   // search werkt nog niet
   public findByName(name: any): Observable<Flight[]> {
     return this.http.get<Flight[]>(`${this.flightsUrl}?name=${name}`);

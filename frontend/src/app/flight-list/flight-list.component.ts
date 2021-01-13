@@ -15,7 +15,6 @@ export class FlightListComponent implements OnInit {
   flights : Flight[] =[];
   airports: Airport[] = [];
 
-
   constructor(private flightService: FlightService, private airportsService: AirportService) { }
 
   ngOnInit() {
@@ -25,6 +24,9 @@ export class FlightListComponent implements OnInit {
     this.airportsService.findAll().subscribe((airportData: any) => {
       this.airports = airportData
     });
+
+
+    // onSubmit() mischien toevoegen om delete knop werkend te krijgen
 
 
   }

@@ -11,7 +11,9 @@ const routes: Routes = [
     { path: 'addAirport', component: AirportFormComponent },
     { path: 'flights', component: FlightListComponent },
     { path: 'airports', component: AirportListComponent },
-    { path: 'airlines', component: AirlineListComponent }
+    { path: 'airlines', component: AirlineListComponent },
+    { path: 'deleteFlight', component: FlightListComponent }
+
 
 ];
 

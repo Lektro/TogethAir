@@ -5,7 +5,6 @@
     <form (ngSubmit)="onSubmit()" #airportForm="ngForm">
 
       <div class="form-group">
-        <!--        <label for="basePrice">Base Price</label>-->
         <input id="name"
                name="name"
                type="text"
@@ -15,6 +14,39 @@
                required #name="ngModel">
       </div>
       <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger" >Name is required</div>
+
+      <div class="form-group">
+        <input id="airportCode"
+               name="airportCode"
+               type="text"
+               class="form-control"
+               [(ngModel)]="airport.airportCode"
+               placeholder="Enter the Airport Code"
+               required #airportCode="ngModel">
+      </div>
+      <div *ngIf="airportCode.invalid && (airportCode.dirty || airportCode.touched)" class="alert alert-danger" >Airport Code is required</div>
+
+      <div class="form-group">
+        <input id="country"
+               name="country"
+               type="text"
+               class="form-control"
+               [(ngModel)]="airport.country"
+               placeholder="Enter the Airport's Country'"
+               required #country="ngModel">
+      </div>
+      <div *ngIf="country.invalid && (country.dirty || country.touched)" class="alert alert-danger" >Country is required</div>
+
+      <div class="form-group">
+        <input id="region"
+               name="region"
+               type="text"
+               class="form-control"
+               [(ngModel)]="airport.region"
+               placeholder="Enter the Airport's Region'"
+               required #region="ngModel">
+      </div>
+      <div *ngIf="region.invalid && (region.dirty || region.touched)" class="alert alert-danger" >Region is required</div>
 
       <button type="submit" class="btn btn-info">Submit</button>
     </form>

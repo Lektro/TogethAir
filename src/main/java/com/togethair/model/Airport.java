@@ -11,19 +11,13 @@ public class Airport {
     @Column(updatable = false, nullable = false)
     private Long id;
 
-    @Column()
     private String airportCode;
 
-    @Column()
     private String name;
 
-    @Column()
     private String country;
 
-    @Column()
     private String region;
-
-
 
     // may be a bit too much
 /*

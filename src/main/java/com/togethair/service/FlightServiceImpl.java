@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class FlightServiceImpl implements FlightService {
     private final FlightRepository flightRepository;
 
-
     public FlightServiceImpl(FlightRepository flightRepository) { this.flightRepository = flightRepository ;}
 
     @Override

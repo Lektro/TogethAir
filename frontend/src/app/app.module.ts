@@ -13,6 +13,14 @@ import { AirlineListComponent } from './airline-list/airline-list.component';
 import { AirportFormComponent } from './airport-form/airport-form.component';
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
+
+  ],
+  
   declarations: [
     AppComponent,
     FlightListComponent,
@@ -23,13 +31,7 @@ import { AirportFormComponent } from './airport-form/airport-form.component';
     AirportFormComponent
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
 
-  ],
   providers: [FlightService, AirportService, AirportService],
   bootstrap: [AppComponent]
 })

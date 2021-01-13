@@ -23,8 +23,9 @@ public class AirlineServiceImpl implements AirlineService {
 
     }
 
+    @Override
     public Airline save(Airline airline) {
-        return airline;
+        return airlineRepository.save(airline);
     }
 
 }

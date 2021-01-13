@@ -22,7 +22,8 @@ public class AirportRestController {
         return airportService.getAllAirports();
     }
 
-    @PostMapping(value = {"/addAirports"})
-    public Airport createAirport(@RequestBody Airport airport) {return airportService.save(airport);
+    // redirect ging mis hier
+    @PostMapping(value = {"/airports"})
+    public Airport createAirport(@RequestBody Airport airport) { return airportService.save(airport);
     }
 }

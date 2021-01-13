@@ -21,6 +21,7 @@ import { AirportFormComponent } from './airport-form/airport-form.component';
     // this one needs to be loaded last?
     FlightFormComponent,
     AirportFormComponent
+
   ],
   imports: [
     BrowserModule,

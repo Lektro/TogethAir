@@ -3,7 +3,6 @@ package com.togethair.restcontroller;
 import com.sun.istack.NotNull;
 import com.togethair.model.Flight;
 import com.togethair.service.FlightService;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -1,7 +1,6 @@
 package com.togethair.service;
 
 import com.togethair.model.Flight;
-import com.togethair.repository.AirportRepository;
 import com.togethair.repository.FlightRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class FlightServiceImpl implements FlightService {
     private final FlightRepository flightRepository;
+
 
     public FlightServiceImpl(FlightRepository flightRepository) { this.flightRepository = flightRepository ;}
 

@@ -1,8 +1,6 @@
 package com.togethair.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "airport", schema = "togethair")
@@ -13,16 +11,16 @@ public class Airport {
     @Column(updatable = false, nullable = false)
     private Long id;
 
-    @Column(nullable = false,length = 3)
+    @Column()
     private String airportCode;
 
-    @Column(nullable = false,length = 100)
+    @Column()
     private String name;
 
-    @Column(nullable = false,length = 100)
+    @Column()
     private String country;
 
-    @Column(nullable = false,length = 100)
+    @Column()
     private String region;
 
 
@@ -36,6 +34,13 @@ public class Airport {
     public Airport() {
     }
 
+    public Airport(Long id, String airportCode, String name, String country, String region) {
+        this.id = id;
+        this.airportCode = airportCode;
+        this.name = name;
+        this.country = country;
+        this.region = region;
+    }
 
     public Long getId() {
         return id;

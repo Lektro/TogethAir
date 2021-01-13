@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {Airport} from "../model/airport";
+import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {AirportService} from "../service/airport.service";
+import {Airport} from "../model/airport";
 
 @Component({
   selector: 'app-airport-form',
   templateUrl: './airport-form.component.html',
   styleUrls: ['./airport-form.component.css']
 })
-export class AirportFormComponent implements OnInit {
+export class AirportFormComponent {
 
   airport: Airport;
 
@@ -25,8 +25,4 @@ export class AirportFormComponent implements OnInit {
   gotoAirportList() {
     this.router.navigate(['/airports']);
   }
-
-  ngOnInit(): void {
-  }
-
 }

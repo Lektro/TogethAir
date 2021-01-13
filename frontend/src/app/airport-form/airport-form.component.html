@@ -1,1 +1,22 @@
 <p>airport-form works!</p>
+<h1>Add A New Airport Here</h1>
+<div class="card ">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #airportForm="ngForm">
+
+      <div class="form-group">
+        <!--        <label for="basePrice">Base Price</label>-->
+        <input id="name"
+               name="name"
+               type="text"
+               class="form-control"
+               [(ngModel)]="airport.name"
+               placeholder="Enter the Airport Name"
+               required #name="ngModel">
+      </div>
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger" >Name is required</div>
+
+      <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

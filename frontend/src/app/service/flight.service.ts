@@ -45,8 +45,8 @@ export class FlightService {
   }
 
   // mooi voorbeeld om maar 1 url te gebruiken in uw back end
-  public delete(data: any): Observable<any> {
-    return this.http.delete(this.flightsUrl, data);
+  delete(id: number): Observable<any> {
+    return this.http.delete(`${this.flightsUrl}/${id}`);
   }
 
   // search werkt nog niet

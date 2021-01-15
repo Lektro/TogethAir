@@ -11,7 +11,7 @@ import { AirportService} from "../service/airport.service";
 })
 
 export class FlightListComponent implements OnInit {
-
+  flight: Flight | undefined;
   flights : Flight[] =[];
   airports: Airport[] = [];
 
@@ -24,10 +24,10 @@ export class FlightListComponent implements OnInit {
     this.airportsService.findAll().subscribe((airportData: any) => {
       this.airports = airportData
     });
-
-
-    // onSubmit() mischien toevoegen om delete knop werkend te krijgen
-
-
+  }
+  delete(id: number) {
+    this.flightService.delete(id).subscribe((flightdata: any) => {
+      this.flightService.delete(flightdata);
+    })
   }
 }

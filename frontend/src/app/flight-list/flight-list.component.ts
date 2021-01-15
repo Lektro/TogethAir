@@ -3,6 +3,7 @@ import { Flight } from '../model/flight';
 import { Airport } from '../model/airport';
 import { FlightService } from '../service/flight.service';
 import { AirportService} from "../service/airport.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-flight-list',
@@ -11,11 +12,12 @@ import { AirportService} from "../service/airport.service";
 })
 
 export class FlightListComponent implements OnInit {
-  flight: Flight | undefined;
-  flights : Flight[] =[];
+  flight!: Flight;
+  flights : Flight[] = [];
   airports: Airport[] = [];
 
-  constructor(private flightService: FlightService, private airportsService: AirportService) { }
+  constructor(private flightService: FlightService, private airportsService: AirportService, private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
     this.flightService.findAll().subscribe((flightData: any) => {
@@ -25,6 +27,7 @@ export class FlightListComponent implements OnInit {
       this.airports = airportData
     });
   }
+
   delete(id: number) {
     this.flightService.delete(id).subscribe((flightdata: any) => {
       this.flightService.delete(flightdata);

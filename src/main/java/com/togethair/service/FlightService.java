@@ -7,4 +7,5 @@ import org.springframework.stereotype.Service;
 public interface FlightService {
     Iterable<Flight> getAllFlights();
     Flight save(Flight flight);
+    void deleteById(Long id);
 }

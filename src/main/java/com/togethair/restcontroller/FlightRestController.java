@@ -25,4 +25,10 @@ public class FlightRestController {
     @PostMapping(value = {"/addFlights"})
     public Flight createFlight(@RequestBody Flight flight) { return flightService.save(flight);
     }
+
+    @DeleteMapping("/flights/{id}")
+    public void deleteFlight(@PathVariable Long id) {
+        flightService.deleteById(id);
+    }
+
 }

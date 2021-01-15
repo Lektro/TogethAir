@@ -12,12 +12,11 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 
 export class FlightListComponent implements OnInit {
-  flight!: Flight;
+  id!: number;
   flights : Flight[] = [];
   airports: Airport[] = [];
 
-  constructor(private flightService: FlightService, private airportsService: AirportService, private route: ActivatedRoute,
-              private router: Router) { }
+  constructor(private flightService: FlightService, private airportsService: AirportService) { }
 
   ngOnInit() {
     this.flightService.findAll().subscribe((flightData: any) => {
@@ -32,7 +31,7 @@ export class FlightListComponent implements OnInit {
     this.flightService.delete(id).subscribe((flightdata: any) => {
       this.flightService.delete(flightdata);
       // redraws the table after delete
-      this.ngOnInit();
+      return this.ngOnInit();
     })
   }
 }

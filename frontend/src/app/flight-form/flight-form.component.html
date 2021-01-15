@@ -4,7 +4,7 @@
     <form (ngSubmit)="onSubmit()" #flightForm="ngForm">
 
       <div class="form-group">
-<!--        <label for="basePrice">Base Price</label>-->
+        <label for="basePrice">Enter The Base Price</label>
         <input type="number" [(ngModel)]="flight.basePrice"
                class="form-control"
                id="basePrice"
@@ -15,7 +15,7 @@
       <div *ngIf="basePrice.invalid && (basePrice.dirty || basePrice.touched)" class="alert alert-danger" >Price is required</div>
 
       <div class="form-group">
-<!--        <label for="flightNumber">Flight Number</label>-->
+        <label for="flightNumber">Enter The Flight Number</label>
         <input type="number" [(ngModel)]="flight.flightNumber"
                class="form-control"
                id="flightNumber"
@@ -26,7 +26,7 @@
       <div *ngIf="flightNumber.invalid && (flightNumber.dirty || flightNumber.touched)" class="alert alert-danger" >Flight Number is required</div>
 
       <div class="form-group">
-<!--        <label for="flightDuration">Flight Duration</label>-->
+        <label for="flightDuration">Enter The Flight Duration</label>
         <input type="number" [(ngModel)]="flight.flightDuration"
                class="form-control"
                id="flightDuration"
@@ -37,7 +37,7 @@
       <div *ngIf="flightDuration.invalid && (flightDuration.dirty || flightDuration.touched)" class="alert alert-danger" >Flight Duration is required</div>
 
       <div class="form-group">
-<!--        <label for="totalSeats">Total Seats</label>-->
+        <label for="totalSeats">Enter Total Amount of Seats</label>
         <input type="number" [(ngModel)]="flight.totalSeats"
                class="form-control"
                id="totalSeats"
@@ -48,7 +48,7 @@
       <div *ngIf="totalSeats.invalid && (totalSeats.dirty || totalSeats.touched)" class="alert alert-danger" >Total Number of seats is required</div>
 
       <div class="form-group">
-<!--        <label for="departureAirport">Departure Airport</label>-->
+        <label for="departureAirport">Select Departure Airport</label>
           <select [(ngModel)]="flight.departureAirport" class="custom-select" id="departureAirport" name="departureAirport" style="width: 100%;">
             <option disabled value="undefined">Select Departure Airport</option>
             <option *ngFor="let airport of airports" [ngValue]="airport" >{{ airport.name }}</option>
@@ -56,7 +56,7 @@
       </div>
 
       <div class="form-group">
-<!--        <label for="arrivalAirport">Arrival Airport</label>-->
+        <label for="arrivalAirport">Select Arrival Airport</label>
         <select [(ngModel)]="flight.arrivalAirport "class="custom-select" id="arrivalAirport" name="arrivalAirport" style="width: 100%;">
           <option disabled value="undefined">Select Arrival Airport</option>
           <option *ngFor="let airport of airports" [ngValue]="airport" >{{ airport.name}}</option>
@@ -64,7 +64,7 @@
       </div>
 
       <div class="form-group">
-<!--                <label for="arrivalAirport">Select Airline Company</label>-->
+        <label for="arrivalAirport">Select Airline Company</label>
 <!--        ng model  en name attribute NEEDED here to select the proper fields in the database model-->
         <select [(ngModel)]="flight.airline" class="custom-select" id="airline" name="airline" style="width: 100%;">
           <option disabled value="undefined">Select Airline Company</option>

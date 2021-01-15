@@ -1,10 +1,10 @@
-<p>airport-form works!</p>
-<h1>Add A New Airport Here</h1>
+<h1>Add New Airport Details</h1>
 <div class="card ">
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #airportForm="ngForm">
 
       <div class="form-group">
+        <label for="name">Enter Airport Name</label>
         <input id="name"
                name="name"
                type="text"
@@ -16,6 +16,8 @@
       <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger" >Name is required</div>
 
       <div class="form-group">
+        <label for="airportCode">Enter Airport Code</label>
+
         <input id="airportCode"
                name="airportCode"
                type="text"
@@ -27,6 +29,8 @@
       <div *ngIf="airportCode.invalid && (airportCode.dirty || airportCode.touched)" class="alert alert-danger" >Airport Code is required</div>
 
       <div class="form-group">
+        <label for="country">Enter Airport Country </label>
+
         <input id="country"
                name="country"
                type="text"
@@ -38,6 +42,7 @@
       <div *ngIf="country.invalid && (country.dirty || country.touched)" class="alert alert-danger" >Country is required</div>
 
       <div class="form-group">
+        <label for="region">Enter Airport Region </label>
         <input id="region"
                name="region"
                type="text"

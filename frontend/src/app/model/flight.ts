@@ -2,6 +2,7 @@ import {Airport} from "./airport";
 import {Airline} from "./airline";
 
 export class Flight {
+    // typscript error on delete altho the call does make it to the Spring Back End
     id: number | undefined;
     basePrice: number | undefined;
     flightNumber: string | undefined;

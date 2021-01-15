@@ -31,6 +31,8 @@ export class FlightListComponent implements OnInit {
   delete(id: number) {
     this.flightService.delete(id).subscribe((flightdata: any) => {
       this.flightService.delete(flightdata);
+      // redraws the table after delete
+      this.ngOnInit();
     })
   }
 }

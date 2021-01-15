@@ -28,8 +28,8 @@
         <td >{{ flight.departureAirport != undefined ? flight.departureAirport.name : "Departure N/A" }}</td>
         <td >{{ flight.arrivalAirport != undefined ? flight.arrivalAirport.name : "Arrival N/A" }}</td>
         <td>{{ flight.airline!= undefined ? flight.airline.name :"Airline N/A" }}</td>
-        <a routerLink="/tickets" class="btn btn-info">Order Ticket</a>
-        <a routerLink="/flights" (click)="delete(flight.id)" class="btn btn-info">Delete Flight</a>
+        <td><a routerLink="/tickets" class="btn btn-info">Order Ticket</a></td>
+        <td><a routerLink="/flights" (click)="delete(flight.id)" class="btn btn-info">Delete Flight</a></td>
       </tr>
       </tbody>
     </table>

@@ -13,6 +13,7 @@ import { AirlineListComponent } from './airline-list/airline-list.component';
 import { AirportFormComponent } from './airport-form/airport-form.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
+import { TicketFormComponent } from './ticket-form/ticket-form.component';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { UserFormComponent } from './user-form/user-form.component';
     FlightFormComponent,
     AirportFormComponent,
     UserListComponent,
-    UserFormComponent
+    UserFormComponent,
+    TicketFormComponent
 
   ],
 

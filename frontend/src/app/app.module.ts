@@ -14,6 +14,7 @@ import { AirportFormComponent } from './airport-form/airport-form.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { TicketFormComponent } from './ticket-form/ticket-form.component';
+import { AirlineFormComponent } from './airline-form/airline-form.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { TicketFormComponent } from './ticket-form/ticket-form.component';
     AirportFormComponent,
     UserListComponent,
     UserFormComponent,
-    TicketFormComponent
+    TicketFormComponent,
+    AirlineFormComponent
 
   ],
 

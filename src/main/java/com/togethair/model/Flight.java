@@ -41,9 +41,11 @@ public class Flight {
     @Column(nullable = false)
     private String flightNumber;
 
+//    I could choose to insert string here if the front end gives to much trouble the flight list is out of scope anyway
     @Column(name = "departure_time", columnDefinition = "DATETIME")
     private LocalDateTime departureTime;
 
+    //    I could choose to insert string here if the front end gives to much trouble the flight list is out of scope anyway
     @Column(name = "arrival_time", columnDefinition = "DATETIME")
     private LocalDateTime arrivalTime;
 

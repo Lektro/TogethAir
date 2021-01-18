@@ -11,12 +11,17 @@ public class Airport {
     @Column(updatable = false, nullable = false)
     private Long id;
 
+    @Column(nullable = false)
     private String airportCode;
 
+    @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     private String country;
 
+    // make an Enum based on Regions?
+    @Column(nullable = false)
     private String region;
 
     // may be a bit too much

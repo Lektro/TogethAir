@@ -17,11 +17,7 @@ export class FlightService {
   private readonly addFlightUrl = 'http://localhost:8080/api/addFlights';
 
   constructor(private http: HttpClient) {
-    this.airportUrl = 'http://localhost:8080/api/airports';
-    this.flightsUrl = 'http://localhost:8080/api/flights';
-    this.airlineUrl = 'http://localhost:8080/api/airlines';
-    // deze is overbodig als je je backend aanpast
-    this.addFlightUrl = 'http://localhost:8080/api/addFlights';
+
   }
 
   public findAll() {

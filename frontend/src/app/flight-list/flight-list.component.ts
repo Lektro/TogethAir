@@ -19,6 +19,8 @@ export class FlightListComponent implements OnInit {
   constructor(private flightService: FlightService, private airportsService: AirportService) { }
 
   ngOnInit() {
+    // veiliger om te promise en then  subscribe is beter voor comm tussen twee components ipv services
+    // services returnen enkel data, components bv chatstreams
     this.flightService.findAll().subscribe((flightData: any) => {
       this.flights = flightData
     });
@@ -28,10 +30,16 @@ export class FlightListComponent implements OnInit {
   }
 
   delete(id: number) {
-    this.flightService.delete(id).subscribe((flightdata: any) => {
-      this.flightService.delete(flightdata);
+    // toPromise().then() closes the stream, subscribe does not close the stream
+    this.flightService.delete(id).toPromise().then(() => {
       // redraws the table after delete
       return this.ngOnInit();
     })
   }
+/*
+  update(id: number): {
+    this.flightService.update(id).toPromise().then(() => {
+    // redraws the table after delete
+    this.router.navigate(['/flights/{id}']))
+  }*/
 }

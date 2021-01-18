@@ -11,6 +11,8 @@ import { AirportListComponent } from './airport-list/airport-list.component';
 import { AirportService } from "./service/airport.service";
 import { AirlineListComponent } from './airline-list/airline-list.component';
 import { AirportFormComponent } from './airport-form/airport-form.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
 @NgModule({
   imports: [
@@ -28,7 +30,9 @@ import { AirportFormComponent } from './airport-form/airport-form.component';
     AirlineListComponent,
     // this one needs to be loaded last?
     FlightFormComponent,
-    AirportFormComponent
+    AirportFormComponent,
+    UserListComponent,
+    UserFormComponent
 
   ],
 

@@ -26,7 +26,7 @@ public class Flight {
     @JoinColumn(name="fk_arrival_airport_id")
     private Airport arrivalAirport;
 
-    @Column()
+    @Column(nullable = false)
     private Long flightDuration;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
@@ -34,10 +34,10 @@ public class Flight {
     private Airline airline;
 
     // vital for prototype
-    @Column
+    @Column(nullable = false)
     private int totalSeats;
 
-    @Column()
+    @Column(nullable = false)
     private String flightNumber;
 
     public Flight () {

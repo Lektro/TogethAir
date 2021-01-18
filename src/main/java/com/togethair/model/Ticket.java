@@ -18,15 +18,11 @@ public class Ticket {
     @JoinColumn(name = "flight_id")
     private  Flight flight;
 
+    // user or customer
     @OneToOne
-    @JoinColumn(name = "user_id")
     private User user;
 
-/*
-    link to user/costumer
-*/
-
-    public Ticket () {}
+    public Ticket() {}
 
     public Long getId() {
         return id;

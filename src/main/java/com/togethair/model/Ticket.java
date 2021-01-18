@@ -16,7 +16,7 @@ public class Ticket {
 
     @OneToOne
     @JoinColumn(name = "flight_id")
-    private  Flight flight;
+    private Flight flight;
 
     // user or customer
     @OneToOne

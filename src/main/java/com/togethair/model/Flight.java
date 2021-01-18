@@ -1,7 +1,5 @@
 package com.togethair.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -27,6 +25,7 @@ public class Flight {
     @JoinColumn(name="fk_arrival_airport_id")
     private Airport arrivalAirport;
 
+    // int is probably better here
     @Column(nullable = false)
     private Long flightDuration;
 
@@ -37,6 +36,20 @@ public class Flight {
     // vital for prototype but needs to be split into seperate travel classes
     @Column(nullable = false)
     private int totalSeats;
+
+    private int availableSeats;
+
+    private int totalEconomyClassSeats;
+
+    private int availableEconomyClassSeats;
+
+    private int availableFirstClassSeats;
+
+    private int totalFirstClassSeats;
+
+    private int availableBusinessClassSeats;
+
+    private int totalBusinessClassSeats;
 
     @Column(nullable = false)
     private String flightNumber;
@@ -142,5 +155,61 @@ public class Flight {
 
     public void setArrivalTime(LocalDateTime arrivalTime) {
         this.arrivalTime = arrivalTime;
+    }
+
+    public int getAvailableSeats() {
+        return availableSeats;
+    }
+
+    public void setAvailableSeats(int availableSeats) {
+        this.availableSeats = availableSeats;
+    }
+
+    public int getTotalEconomyClassSeats() {
+        return totalEconomyClassSeats;
+    }
+
+    public void setTotalEconomyClassSeats(int totalEconomyClassSeats) {
+        this.totalEconomyClassSeats = totalEconomyClassSeats;
+    }
+
+    public int getAvailableEconomyClassSeats() {
+        return availableEconomyClassSeats;
+    }
+
+    public void setAvailableEconomyClassSeats(int availableEconomyClassSeats) {
+        this.availableEconomyClassSeats = availableEconomyClassSeats;
+    }
+
+    public int getAvailableFirstClassSeats() {
+        return availableFirstClassSeats;
+    }
+
+    public void setAvailableFirstClassSeats(int availableFirstClassSeats) {
+        this.availableFirstClassSeats = availableFirstClassSeats;
+    }
+
+    public int getTotalFirstClassSeats() {
+        return totalFirstClassSeats;
+    }
+
+    public void setTotalFirstClassSeats(int totalFirstClassSeats) {
+        this.totalFirstClassSeats = totalFirstClassSeats;
+    }
+
+    public int getAvailableBusinessClassSeats() {
+        return availableBusinessClassSeats;
+    }
+
+    public void setAvailableBusinessClassSeats(int availableBusinessClassSeats) {
+        this.availableBusinessClassSeats = availableBusinessClassSeats;
+    }
+
+    public int getTotalBusinessClassSeats() {
+        return totalBusinessClassSeats;
+    }
+
+    public void setTotalBusinessClassSeats(int totalBusinessClassSeats) {
+        this.totalBusinessClassSeats = totalBusinessClassSeats;
     }
 }

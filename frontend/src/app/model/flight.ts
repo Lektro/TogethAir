@@ -12,4 +12,8 @@ export class Flight {
     flightDuration: number | undefined;
     airline: Airline | undefined;
     totalSeats: number | undefined;
+
+  // naamgeving moet overeenkomen met je model in java
+    departureTime: Date | undefined;
+    arrivalTime: Date | undefined;
 }

@@ -3,6 +3,7 @@ package com.togethair.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "flight", schema = "togethair")
@@ -39,6 +40,12 @@ public class Flight {
 
     @Column(nullable = false)
     private String flightNumber;
+
+    @Column(name = "departure_time", columnDefinition = "DATETIME")
+    private LocalDateTime departureTime;
+
+    @Column(name = "arrival_time", columnDefinition = "DATETIME")
+    private LocalDateTime arrivalTime;
 
     public Flight () {
 
@@ -117,5 +124,21 @@ public class Flight {
 
     public void setFlightNumber(String flightNumber) {
         this.flightNumber = flightNumber;
+    }
+
+    public LocalDateTime getDepartureTime() {
+        return departureTime;
+    }
+
+    public void setDepartureTime(LocalDateTime departureTime) {
+        this.departureTime = departureTime;
+    }
+
+    public LocalDateTime getArrivalTime() {
+        return arrivalTime;
+    }
+
+    public void setArrivalTime(LocalDateTime arrivalTime) {
+        this.arrivalTime = arrivalTime;
     }
 }

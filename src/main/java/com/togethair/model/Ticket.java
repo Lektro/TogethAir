@@ -24,6 +24,12 @@ public class Ticket {
 
     public Ticket() {}
 
+    public Ticket(Long id, Flight flight, User user) {
+        this.id = id;
+        this.flight = flight;
+        this.user = user;
+    }
+
     public Long getId() {
         return id;
     }
@@ -66,6 +72,7 @@ public class Ticket {
         return "Ticket{" +
                 "id=" + id +
                 ", flight=" + flight +
+                ", user=" + user +
                 '}';
     }
 }

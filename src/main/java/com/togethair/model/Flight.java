@@ -34,7 +34,7 @@ public class Flight {
     @JoinColumn(name="fk_airline_id")
     private Airline airline;
 
-    // vital for prototype
+    // vital for prototype but needs to be split into seperate travel classes
     @Column(nullable = false)
     private int totalSeats;
 

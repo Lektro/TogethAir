@@ -9,6 +9,7 @@ import {UserListComponent} from "./user-list/user-list.component";
 import {UserFormComponent} from "./user-form/user-form.component";
 import {TicketFormComponent} from "./ticket-form/ticket-form.component";
 import {AirlineFormComponent} from "./airline-form/airline-form.component";
+import {FlightDetailsComponent} from "./flight-details/flight-details.component";
 
 const routes: Routes = [
     { path: 'addFlight', component: FlightFormComponent },
@@ -20,7 +21,8 @@ const routes: Routes = [
     { path: 'users', component: UserListComponent },
     { path: 'addUser', component: UserFormComponent },
     { path: 'addTicket', component: TicketFormComponent },
-    { path: 'addAirline', component: AirlineFormComponent }
+    { path: 'addAirline', component: AirlineFormComponent },
+    { path: 'flightDetails', component: FlightDetailsComponent }
 
 ];
 

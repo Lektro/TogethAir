@@ -1,6 +1,7 @@
 package com.togethair.model;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -12,8 +13,12 @@ public class Flight {
     @Column(updatable = false, nullable = false)
     private Long id;
 
-    @Column(nullable = false)
-    private Long basePrice;
+    // BigDecimal to map to MySql Decimal also supports get string towards front end
+    private BigDecimal basePrice;
+
+    private BigDecimal advertisedPrice;
+
+    private BigDecimal employeeOverridePrice;
 
 //    ook hier is de cascadetype.refresh heel belangrijk
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
@@ -33,7 +38,7 @@ public class Flight {
     @JoinColumn(name="fk_airline_id")
     private Airline airline;
 
-    // vital for prototype but needs to be split into seperate travel classes
+    // vital for prototype but needs to be split into separate travel classes
     @Column(nullable = false)
     private int totalSeats;
 
@@ -62,19 +67,26 @@ public class Flight {
     @Column(name = "arrival_time", columnDefinition = "DATETIME")
     private LocalDateTime arrivalTime;
 
-    public Flight () {
-
-    }
-
-    public Flight(Long id, Long basePrice, Airport departureAirport, Airport arrivalAirport, Long flightDuration, Airline airline, int totalSeats, String flightNumber) {
+    public Flight(Long id, BigDecimal basePrice, BigDecimal advertisedPrice, BigDecimal employeeOverridePrice, Airport departureAirport, Airport arrivalAirport, Long flightDuration, Airline airline, int totalSeats, int availableSeats, int totalEconomyClassSeats, int availableEconomyClassSeats, int availableFirstClassSeats, int totalFirstClassSeats, int availableBusinessClassSeats, int totalBusinessClassSeats, String flightNumber, LocalDateTime departureTime, LocalDateTime arrivalTime) {
         this.id = id;
         this.basePrice = basePrice;
+        this.advertisedPrice = advertisedPrice;
+        this.employeeOverridePrice = employeeOverridePrice;
         this.departureAirport = departureAirport;
         this.arrivalAirport = arrivalAirport;
         this.flightDuration = flightDuration;
         this.airline = airline;
         this.totalSeats = totalSeats;
+        this.availableSeats = availableSeats;
+        this.totalEconomyClassSeats = totalEconomyClassSeats;
+        this.availableEconomyClassSeats = availableEconomyClassSeats;
+        this.availableFirstClassSeats = availableFirstClassSeats;
+        this.totalFirstClassSeats = totalFirstClassSeats;
+        this.availableBusinessClassSeats = availableBusinessClassSeats;
+        this.totalBusinessClassSeats = totalBusinessClassSeats;
         this.flightNumber = flightNumber;
+        this.departureTime = departureTime;
+        this.arrivalTime = arrivalTime;
     }
 
     public Long getId() {
@@ -85,11 +97,11 @@ public class Flight {
         this.id = id;
     }
 
-    public Long getBasePrice() {
+    public BigDecimal getBasePrice() {
         return basePrice;
     }
 
-    public void setBasePrice(Long basePrice) {
+    public void setBasePrice(BigDecimal basePrice) {
         this.basePrice = basePrice;
     }
 
@@ -157,6 +169,7 @@ public class Flight {
         this.arrivalTime = arrivalTime;
     }
 
+    // checks here ?? when ordering a ticket we need to minus one here aswell?
     public int getAvailableSeats() {
         return availableSeats;
     }
@@ -211,5 +224,25 @@ public class Flight {
 
     public void setTotalBusinessClassSeats(int totalBusinessClassSeats) {
         this.totalBusinessClassSeats = totalBusinessClassSeats;
+    }
+
+    public BigDecimal setAdvertisedPrice(BigDecimal basePrice) {
+        BigDecimal addMarkUpToBasePrice = new BigDecimal("1,10") ;
+        BigDecimal advertisedPrice = basePrice.multiply(addMarkUpToBasePrice);
+        System.out.println(advertisedPrice);
+         return advertisedPrice;
+    }
+
+    public BigDecimal getAdvertisedPrice() {
+        return advertisedPrice;
+    }
+
+    public BigDecimal getEmployeeOverridePrice() {
+        return employeeOverridePrice;
+    }
+
+    /// check on price here, cannot go lower then basePrice
+    public void setEmployeeOverridePrice(BigDecimal employeeOverridePrice, BigDecimal advertisedPrice, BigDecimal basePrice ) {
+
     }
 }

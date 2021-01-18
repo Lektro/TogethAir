@@ -1,5 +1,8 @@
 package com.togethair.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Formula;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -14,11 +17,12 @@ public class Flight {
     private Long id;
 
     // BigDecimal to map to MySql Decimal also supports get string towards front end
-    private BigDecimal basePrice;
+    // Probably better to use a double, it does not need to be precise for this prototype and the basePrice is out of scope anyway
+    private double basePrice;
 
-    private BigDecimal advertisedPrice;
+    private double advertisedPrice;
 
-    private BigDecimal employeeOverridePrice;
+    private double employeeOverridePrice;
 
 //    ook hier is de cascadetype.refresh heel belangrijk
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
@@ -39,10 +43,9 @@ public class Flight {
     private Airline airline;
 
     // vital for prototype but needs to be split into separate travel classes
-    @Column(nullable = false)
     private int totalSeats;
 
-    private int availableSeats;
+    private int totalAvailableSeats;
 
     private int totalEconomyClassSeats;
 
@@ -67,17 +70,17 @@ public class Flight {
     @Column(name = "arrival_time", columnDefinition = "DATETIME")
     private LocalDateTime arrivalTime;
 
-    public Flight(Long id, BigDecimal basePrice, BigDecimal advertisedPrice, BigDecimal employeeOverridePrice, Airport departureAirport, Airport arrivalAirport, Long flightDuration, Airline airline, int totalSeats, int availableSeats, int totalEconomyClassSeats, int availableEconomyClassSeats, int availableFirstClassSeats, int totalFirstClassSeats, int availableBusinessClassSeats, int totalBusinessClassSeats, String flightNumber, LocalDateTime departureTime, LocalDateTime arrivalTime) {
+    public Flight() {
+    }
+
+    public Flight(Long id, Airport departureAirport, Airport arrivalAirport, Long flightDuration, Airline airline, int totalSeats, int availableSeats, int totalEconomyClassSeats, int availableEconomyClassSeats, int availableFirstClassSeats, int totalFirstClassSeats, int availableBusinessClassSeats, int totalBusinessClassSeats, String flightNumber, LocalDateTime departureTime, LocalDateTime arrivalTime) {
         this.id = id;
-        this.basePrice = basePrice;
-        this.advertisedPrice = advertisedPrice;
-        this.employeeOverridePrice = employeeOverridePrice;
         this.departureAirport = departureAirport;
         this.arrivalAirport = arrivalAirport;
         this.flightDuration = flightDuration;
         this.airline = airline;
         this.totalSeats = totalSeats;
-        this.availableSeats = availableSeats;
+        this.totalAvailableSeats = availableSeats;
         this.totalEconomyClassSeats = totalEconomyClassSeats;
         this.availableEconomyClassSeats = availableEconomyClassSeats;
         this.availableFirstClassSeats = availableFirstClassSeats;
@@ -95,14 +98,6 @@ public class Flight {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public BigDecimal getBasePrice() {
-        return basePrice;
-    }
-
-    public void setBasePrice(BigDecimal basePrice) {
-        this.basePrice = basePrice;
     }
 
     public Airport getDepartureAirport() {
@@ -170,12 +165,12 @@ public class Flight {
     }
 
     // checks here ?? when ordering a ticket we need to minus one here aswell?
-    public int getAvailableSeats() {
-        return availableSeats;
+    public int getTotalAvailableSeats() {
+        return totalAvailableSeats;
     }
 
-    public void setAvailableSeats(int availableSeats) {
-        this.availableSeats = availableSeats;
+    public void setTotalAvailableSeats(int availableSeats) {
+        this.totalAvailableSeats = availableSeats;
     }
 
     public int getTotalEconomyClassSeats() {
@@ -226,23 +221,31 @@ public class Flight {
         this.totalBusinessClassSeats = totalBusinessClassSeats;
     }
 
-    public BigDecimal setAdvertisedPrice(BigDecimal basePrice) {
-        BigDecimal addMarkUpToBasePrice = new BigDecimal("1,10") ;
-        BigDecimal advertisedPrice = basePrice.multiply(addMarkUpToBasePrice);
-        System.out.println(advertisedPrice);
-         return advertisedPrice;
+    public double getBasePrice() {
+        return basePrice;
     }
 
-    public BigDecimal getAdvertisedPrice() {
+    public void setBasePrice(double basePrice) {
+        this.basePrice = basePrice;
+    }
+
+    public double getAdvertisedPrice() {
         return advertisedPrice;
     }
 
-    public BigDecimal getEmployeeOverridePrice() {
+    @Formula("basePrice * 1,10")
+    //Hibernate Interceptor needed here
+    public void setAdvertisedPrice(double advertisedPrice) {
+        this.advertisedPrice = advertisedPrice;
+    }
+
+    public double getEmployeeOverridePrice() {
         return employeeOverridePrice;
     }
 
-    /// check on price here, cannot go lower then basePrice
-    public void setEmployeeOverridePrice(BigDecimal employeeOverridePrice, BigDecimal advertisedPrice, BigDecimal basePrice ) {
-
+    // to make sure employees do not give too much discounts doubles have their own issue in SQL DB however !!!
+    public void setEmployeeOverridePrice(double employeeOverridePrice) {
+        this.employeeOverridePrice = employeeOverridePrice;
     }
+
 }

@@ -15,31 +15,18 @@ public class Ticket {
     private Long id;
 
     @OneToOne
-    private Airline airline;
-
-    @OneToOne
+    @JoinColumn(name = "flight_id")
     private  Flight flight;
 
-    @Column(length = 100)
-    @Transient
-    private transient Airport departureAirport;
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    @Column(length = 100)
-    @Transient
-    private transient Airport arrivalAirport;
-
-    @Column(length = 100)
-    @Transient
-    private transient Flight flightDuration;
+/*
+    link to user/costumer
+*/
 
     public Ticket () {}
-
-    public Ticket(Airline airline, Airport departureAirport, Airport arrivalAirport, Flight flightDuration) {
-        this.airline = airline;
-        this.departureAirport = departureAirport;
-        this.arrivalAirport = arrivalAirport;
-        this.flightDuration = flightDuration;
-    }
 
     public Long getId() {
         return id;
@@ -47,38 +34,6 @@ public class Ticket {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Airline getAirline() {
-        return airline;
-    }
-
-    public void setAirline(Airline airline) {
-        this.airline = airline;
-    }
-
-    public Airport getDepartureAirport() {
-        return departureAirport;
-    }
-
-    public void setDepartureAirport(Airport departureAirport) {
-        this.departureAirport = departureAirport;
-    }
-
-    public Airport getArrivalAirport() {
-        return arrivalAirport;
-    }
-
-    public void setArrivalAirport(Airport arrivalAirport) {
-        this.arrivalAirport = arrivalAirport;
-    }
-
-    public Flight getFlightDuration() {
-        return flightDuration;
-    }
-
-    public void setFlightDuration(Flight flightDuration) {
-        this.flightDuration = flightDuration;
     }
 
     public Flight getFlight() {
@@ -89,27 +44,32 @@ public class Ticket {
         this.flight = flight;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Ticket)) return false;
         Ticket ticket = (Ticket) o;
-        return getId().equals(ticket.getId());
+        return getId().equals(ticket.getId()) && getFlight().equals(ticket.getFlight());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId());
+        return Objects.hash(getId(), getFlight());
     }
 
     @Override
     public String toString() {
         return "Ticket{" +
                 "id=" + id +
-                ", airline=" + airline +
-                ", departureAirport=" + departureAirport +
-                ", arrivalAirport=" + arrivalAirport +
-                ", flightDuration=" + flightDuration +
+                ", flight=" + flight +
                 '}';
     }
 }

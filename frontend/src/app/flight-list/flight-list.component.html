@@ -1,13 +1,13 @@
 <div class="card my-5">
   <div class="card-body">
+    <div class="table-responsive-sm">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">Base Price</th>
+        <th scope="col">Price</th>
         <th scope="col">Flight Number</th>
-        <th scope="col">Flight Duration</th>
-        <th scope="col">Total Seats</th>
+        <th scope="col">Total Available Seats</th>
         <th scope="col">Departure Airport</th>
         <th scope="col">Arrival Airport</th>
         <th scope="col">Airline</th>
@@ -20,11 +20,9 @@
       <tbody>
       <tr *ngFor="let flight of flights" >
         <td>{{ flight.id }}</td>
-        <td>{{ flight.basePrice }}</td>
+        <td>{{ flight.advertisedPrice }}</td>
         <td>{{ flight.flightNumber }}</td>
-        <td>{{ flight.flightDuration }}</td>
-        <td>{{ flight.totalSeats }}</td>
-
+        <td>{{ flight.totalAvailableSeats }}</td>
 <!--        *ngIf only displays on actual value's and otherwise skips check happens on front end part -->
 <!--        ternary if statement to display a default value if departureAirport equals undefined-->
 <!--        condition ? exprIfTrue : exprIfFalse-->
@@ -32,7 +30,7 @@
         <td >{{ flight.arrivalAirport != undefined ? flight.arrivalAirport.name : "Arrival N/A" }}</td>
         <td>{{ flight.airline!= undefined ? flight.airline.name :"Airline N/A" }}</td>
         <td><a [routerLink]="['/getFlightById', flight.id]" class="btn btn-info">Show Details {{flight.id}}</a></td>
-        <td><a routerLink="/addTicket" class="btn btn-info">Order Ticket</a></td>
+        <td><a [routerLink]="['/addTicket', flight.id]" (click)="orderTickets(flight.id)" class="btn btn-info">Order Ticket</a></td>
 
 <!--    <td><a routerLink="/flights" (click)="update(flight.id!)" class="btn btn-info">update Flight</a></td>-->
 <!--        assert not null on flight.id with ! there will always be an ID on this specifice line rendered-->
@@ -40,5 +38,6 @@
       </tr>
       </tbody>
     </table>
+    </div>
   </div>
 </div>

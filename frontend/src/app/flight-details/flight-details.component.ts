@@ -14,7 +14,7 @@ export class FlightDetailsComponent implements OnInit {
 
   // typescript needs a new object for some reason
   flight: Flight = new Flight();
-  airports: Airport[] = [];
+  // airports: Airport[] = [];
   public id!: number;
 
   constructor(private activatedRoute: ActivatedRoute, private flightService: FlightService, private airportsService: AirportService) {
@@ -23,17 +23,18 @@ export class FlightDetailsComponent implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.paramMap.subscribe(params => {
-      this.id = Number.parseInt(<string>params.get('id')) ;
+      this.id = Number.parseInt(<string>params.get('id'));
     });
 
-    this.flightService.findById(this.id).subscribe( flightData => {
+    this.flightService.findById(this.id).subscribe(flightData => {
       this.flight = flightData;
     })
 
-/*    this.airportsService.findAll().subscribe((airportData: any) => {
-      this.airports = airportData
-    });*/
+    /*    this.airportsService.findAll().subscribe((airportData: any) => {
+          this.airports = airportData
+        });*/
   }
+
   delete(id: number) {
     // toPromise().then() closes the stream, subscribe does not close the stream
     this.flightService.delete(id).toPromise().then(() => {
@@ -41,4 +42,13 @@ export class FlightDetailsComponent implements OnInit {
       return this.ngOnInit();
     })
   }
+
+  orderTickets(id: number) {
+    this.flightService.findById(this.id).subscribe(flightData => {
+      this.flight = flightData;
+    })
+  }
 }
+
+// on submit form with user details and ticket amount do the checks in the back end and post it. then give the user a succes message.
+// worry later about payment method let's just make the ticket on a specific User first

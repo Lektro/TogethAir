@@ -4,6 +4,7 @@ import { Airport } from '../model/airport';
 import { FlightService } from '../service/flight.service';
 import { AirportService} from "../service/airport.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {TicketService} from "../service/ticket.service";
 
 @Component({
   selector: 'app-flight-list',
@@ -14,9 +15,10 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class FlightListComponent implements OnInit {
   id!: number;
   flights : Flight[] = [];
+  flight: Flight = new Flight();
   airports: Airport[] = [];
 
-  constructor(private flightService: FlightService, private airportsService: AirportService) { }
+  constructor(private ticketService: TicketService, private flightService: FlightService, private airportsService: AirportService) { }
 
   ngOnInit() {
     // veiliger om te promise en then  subscribe is beter voor comm tussen twee components ipv services
@@ -34,6 +36,11 @@ export class FlightListComponent implements OnInit {
     this.flightService.delete(id).toPromise().then(() => {
       // redraws the table after delete
       return this.ngOnInit();
+    })
+  }
+  orderTickets(id: number) {
+    this.ticketService.create(this.id).subscribe(flightData => {
+      this.flight = flightData;
     })
   }
 /*

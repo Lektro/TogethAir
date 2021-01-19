@@ -20,6 +20,7 @@ public class TicketRestController {
        return ticketService.getAllTickets();
     }
 
-    @PostMapping("/createTickets")
+    /// ticket needs a user ID aswell oops
+    @PostMapping(value = {"/createTickets"})
     public Ticket createTicket(@RequestBody Ticket ticket) { return ticketService.save(ticket); }
 }

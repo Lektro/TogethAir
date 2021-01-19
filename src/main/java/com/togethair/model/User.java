@@ -14,6 +14,17 @@ public class User {
     @Column(nullable = false, length = 100)
     private String name;
 
+    @Column(nullable = false, length = 200)
+    private String address;
+
+    @Column(nullable = false, length = 100)
+    private String emailAddress;
+
+    @Column(nullable = false, length = 100)
+    private String telephoneNumber;
+
+    // do we need more details? login is not active atm, just userdetails to order a ticket-prototype
+
     public Long getId() {
         return id;
     }
@@ -29,4 +40,34 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public String getTelephoneNumber() {
+        return telephoneNumber;
+    }
+
+    public void setTelephoneNumber(String telephoneNumber) {
+        this.telephoneNumber = telephoneNumber;
+    }
+
+    // for the login module
+    public User(Long id) {
+        this.id = id;
+    }
+
 }

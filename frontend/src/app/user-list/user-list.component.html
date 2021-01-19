@@ -1,1 +1,41 @@
 <p>user-list works!</p>
+<div class="card my-5">
+  <div class="card-body">
+    <div class="table-responsive-sm">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">E-mail</th>
+
+          <!--    <th scope="col">Update</th>-->
+          <th scope="col">Telephone Number</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users" >
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.address }}</td>
+          <td>{{ user.emailAddress }}</td>
+          <td>{{ user.telephoneNumber }}</td>
+          <!--        *ngIf only displays on actual value's and otherwise skips check happens on front end part -->
+          <!--        ternary if statement to display a default value if departureAirport equals undefined-->
+          <!--        condition ? exprIfTrue : exprIfFalse-->
+<!--          <td >{{ flight.departureAirport != undefined ? flight.departureAirport.name : "Departure N/A" }}</td>-->
+<!--          <td >{{ flight.arrivalAirport != undefined ? flight.arrivalAirport.name : "Arrival N/A" }}</td>-->
+<!--          <td>{{ flight.airline!= undefined ? flight.airline.name :"Airline N/A" }}</td>-->
+<!--          <td><a [routerLink]="['/getFlightById', flight.id]" class="btn btn-info">Show Details {{flight.id}}</a></td>-->
+<!--          <td><a [routerLink]="['/addTicket', flight.id]" (click)="orderTickets(flight.id)" class="btn btn-info">Order Ticket</a></td>-->
+
+          <!--    <td><a routerLink="/flights" (click)="update(flight.id!)" class="btn btn-info">update Flight</a></td>-->
+          <!--        assert not null on flight.id with ! there will always be an ID on this specifice line rendered-->
+<!--          <td><a routerLink="/flights" (click)="delete(flight.id!)" class="btn btn-info">Delete Flight</a></td>-->
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

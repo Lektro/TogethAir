@@ -26,6 +26,12 @@ public class FlightRestController {
     public Flight createFlight(@RequestBody Flight flight) { return flightService.save(flight);
     }
 
+    @GetMapping(value = "/flightDetails/{id}")
+    public @NotNull
+    Iterable<Flight> getFlightDetails(@PathVariable Long id) {
+        return flightService.getAllFlights();
+    }
+
     @DeleteMapping("/flights/{id}")
     public void deleteFlight(@PathVariable Long id) {
         flightService.deleteById(id);

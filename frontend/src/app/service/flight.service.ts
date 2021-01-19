@@ -46,7 +46,11 @@ export class FlightService {
   }
 
   // search werkt nog niet
-  public findByName(name: any): Observable<Flight[]> {
-    return this.http.get<Flight[]>(`${this.flightsUrl}?name=${name}`);
+  //public findByName(name: any): Observable<Flight[]> {
+    //return this.http.get<Flight[]>(`${this.flightsUrl}?name=${name}`);
+  //}
+
+  public findById(id: any): Observable<Object> {
+    return this.http.get(`${this.flightsUrl}?id=${id}`)
   }
 }

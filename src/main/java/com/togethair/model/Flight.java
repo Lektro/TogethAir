@@ -234,7 +234,7 @@ public class Flight {
     }
 
     @Formula("basePrice * 1,10")
-    //Hibernate Interceptor needed here
+    //Hibernate Interceptor needed here ,, do your calculations in your service class with a dto please
     public void setAdvertisedPrice(double advertisedPrice) {
         this.advertisedPrice = advertisedPrice;
     }

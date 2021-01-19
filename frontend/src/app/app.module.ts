@@ -25,7 +25,7 @@ import { FlightDetailsComponent } from './flight-details/flight-details.componen
     FormsModule
 
   ],
-  
+
   declarations: [
     AppComponent,
     FlightListComponent,

@@ -23,6 +23,10 @@ public class User {
     @Column(nullable = false, length = 100)
     private String telephoneNumber;
 
+    public User() {
+
+    }
+
     // do we need more details? login is not active atm, just userdetails to order a ticket-prototype
 
     public Long getId() {

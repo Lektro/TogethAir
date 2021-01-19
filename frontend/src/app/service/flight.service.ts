@@ -15,6 +15,7 @@ export class FlightService {
   private readonly airlineUrl = 'http://localhost:8080/api/airlines';
   // deze is overbodig als je je backend aanpast
   private readonly addFlightUrl = 'http://localhost:8080/api/addFlights';
+  private readonly getFlightByIdUrl = 'http://localhost:8080/api/getFlightById';
 
   constructor(private http: HttpClient) {
 
@@ -50,7 +51,7 @@ export class FlightService {
     //return this.http.get<Flight[]>(`${this.flightsUrl}?name=${name}`);
   //}
 
-  public findById(id: any): Observable<Object> {
-    return this.http.get(`${this.flightsUrl}?id=${id}`)
+  findById(id: number): Observable<any> {
+    return this.http.get(`${this.getFlightByIdUrl}/${id}`)
   }
 }

@@ -3,6 +3,7 @@ import {Flight} from "../model/flight";
 import {Airport} from "../model/airport";
 import {FlightService} from "../service/flight.service";
 import {AirportService} from "../service/airport.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-flight-details',
@@ -11,22 +12,27 @@ import {AirportService} from "../service/airport.service";
 })
 export class FlightDetailsComponent implements OnInit {
 
-  flights: Flight[] = [];
+  // typescript needs a new object for some reason
+  flight: Flight = new Flight();
   airports: Airport[] = [];
-  private id: number | undefined;
+  public id!: number;
 
-  constructor(private flightService: FlightService, private airportsService: AirportService) {
+  constructor(private activatedRoute: ActivatedRoute, private flightService: FlightService, private airportsService: AirportService) {
   }
 
   ngOnInit() {
-    // veiliger om te promise en then  subscribe is beter voor comm tussen twee components ipv services
-    // services returnen enkel data, components bv chatstreams
-    this.flightService.findById(this.id).subscribe((flightData: any) => {
-      this.flights = flightData
+
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.id = Number.parseInt(<string>params.get('id')) ;
     });
-    this.airportsService.findAll().subscribe((airportData: any) => {
+
+    this.flightService.findById(this.id).subscribe( flightData => {
+      this.flight = flightData;
+    })
+
+/*    this.airportsService.findAll().subscribe((airportData: any) => {
       this.airports = airportData
-    });
+    });*/
   }
   delete(id: number) {
     // toPromise().then() closes the stream, subscribe does not close the stream

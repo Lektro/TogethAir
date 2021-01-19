@@ -22,7 +22,7 @@ const routes: Routes = [
     { path: 'addUser', component: UserFormComponent },
     { path: 'addTicket', component: TicketFormComponent },
     { path: 'addAirline', component: AirlineFormComponent },
-    { path: 'flightDetails', component: FlightDetailsComponent }
+    { path: 'getFlightById/:id', component: FlightDetailsComponent }
 
 ];
 

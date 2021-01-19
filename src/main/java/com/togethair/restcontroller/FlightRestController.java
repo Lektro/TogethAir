@@ -3,7 +3,10 @@ package com.togethair.restcontroller;
 import com.sun.istack.NotNull;
 import com.togethair.model.Flight;
 import com.togethair.service.FlightService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -26,10 +29,11 @@ public class FlightRestController {
     public Flight createFlight(@RequestBody Flight flight) { return flightService.save(flight);
     }
 
-    @GetMapping(value = "/flightDetails/{id}")
-    public @NotNull
-    Iterable<Flight> getFlightDetails(@PathVariable Long id) {
-        return flightService.getAllFlights();
+    // je mag geen twee keer dezelfde GetMapping uitvoeren op dezelfde url
+    @GetMapping(path = "/getFlightById/{id}")
+    public Optional<Flight> getFlightDetails(@PathVariable(value = "id") Long id) {
+         Optional<Flight> flightData = flightService.getFlightById(id);
+        return flightData;
     }
 
     @DeleteMapping("/flights/{id}")

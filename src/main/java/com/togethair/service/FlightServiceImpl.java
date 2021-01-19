@@ -5,6 +5,8 @@ import com.togethair.repository.FlightRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 @Transactional
 public class FlightServiceImpl implements FlightService {
@@ -27,5 +29,9 @@ public class FlightServiceImpl implements FlightService {
         flightRepository.deleteById(id);
     }
 
+    @Override
+    public Optional<Flight> getFlightById(Long id) {
+        return flightRepository.findById(id);
+    }
 
 }

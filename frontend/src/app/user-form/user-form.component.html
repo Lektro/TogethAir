@@ -15,38 +15,39 @@
       <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger" >Username is required</div>
 
       <div class="form-group">
-        <label for="flightNumber">Enter The Flight Number</label>
-        <input type="text" [(ngModel)]="flight.flightNumber"
+        <label for="address">Enter your Address</label>
+        <input type="text" [(ngModel)]="user.address"
                class="form-control"
-               id="flightNumber"
-               name="flightNumber"
-               placeholder="Enter the Flight Number"
-               required #flightNumber="ngModel">
+               id="address"
+               name="address"
+               placeholder="Enter your Address"
+               required #address="ngModel">
       </div>
-      <div *ngIf="flightNumber.invalid && (flightNumber.dirty || flightNumber.touched)" class="alert alert-danger" >Flight Number is required</div>
+      <div *ngIf="address.invalid && (address.dirty || address.touched)" class="alert alert-danger" >Address is required</div>
 
       <div class="form-group">
-        <label for="flightDuration">Enter The Flight Duration</label>
-        <input type="number" [(ngModel)]="flight.flightDuration"
+        <label for="emailAddress">Enter your E-mail Address</label>
+        <input type="text" [(ngModel)]="user.emailAddress"
                class="form-control"
-               id="flightDuration"
-               name="flightDuration"
-               placeholder="Enter the Flight Duration"
-               required #flightDuration="ngModel">
+               id="emailAddress"
+               name="emailAddress"
+               placeholder="Enter your E-mail Address"
+               required #emailAddress="ngModel">
       </div>
-      <div *ngIf="flightDuration.invalid && (flightDuration.dirty || flightDuration.touched)" class="alert alert-danger" >Flight Duration is required</div>
+      <div *ngIf="emailAddress.invalid && (emailAddress.dirty || emailAddress.touched)" class="alert alert-danger" >E-mail Address is required</div>
 
       <div class="form-group">
-        <label for="totalSeats">Enter Total Amount of Seats</label>
-        <input type="number" [(ngModel)]="flight.totalSeats"
+        <label for="telephoneNumber">Enter your Telephone Number</label>
+        <input type="text" [(ngModel)]="user.telephoneNumber"
                class="form-control"
-               id="totalSeats"
-               name="totalSeats"
-               placeholder="Enter the total Amount of seats"
-               required #totalSeats="ngModel">
+               id="telephoneNumber"
+               name="telephoneNumber"
+               placeholder="Enter your Telephone Number"
+               required #telephoneNumber="ngModel">
       </div>
-      <div *ngIf="totalSeats.invalid && (totalSeats.dirty || totalSeats.touched)" class="alert alert-danger" >Total Number of seats is required</div>
+      <div *ngIf="telephoneNumber.invalid && (telephoneNumber.dirty || telephoneNumber.touched)" class="alert alert-danger" >Telephone Number is required</div>
 
+<!-- Do want to use this maybe later?
       <div class="form-group">
         <label for="departureAirport">Select Departure Airport</label>
         <select [(ngModel)]="flight.departureAirport" class="custom-select" id="departureAirport" name="departureAirport" style="width: 100%;">
@@ -65,12 +66,13 @@
 
       <div class="form-group">
         <label for="arrivalAirport">Select Airline Company</label>
-        <!--        ng model  en name attribute NEEDED here to select the proper fields in the database model-->
+        &lt;!&ndash;        ng model  en name attribute NEEDED here to select the proper fields in the database model&ndash;&gt;
         <select [(ngModel)]="flight.airline" class="custom-select" id="airline" name="airline" style="width: 100%;">
           <option disabled value="undefined">Select Airline Company</option>
           <option *ngFor="let airline of airlines" [ngValue]="airline" >{{ airline.name}}</option>
         </select>
       </div>
+-->
 
       <!--      <div class="input-group  col-sm-12">
               <input class="form-control"
@@ -84,6 +86,7 @@
                   type="button"><i class="fa fa-calendar"></i></button>
               </div>
             </div>-->
+
       <button type="submit" class="btn btn-info">Submit</button>
     </form>
   </div>

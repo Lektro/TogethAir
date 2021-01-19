@@ -24,7 +24,7 @@ const routes: Routes = [
     { path: 'addAirline', component: AirlineFormComponent },
     { path: 'getFlightById/:id', component: FlightDetailsComponent },
     { path: 'addTicket', component: TicketFormComponent },
-  // restcontroller not working yet for this one
+    // restController not working yet for this one
     { path: 'users', component: UserListComponent},
 
 

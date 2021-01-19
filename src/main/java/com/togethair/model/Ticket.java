@@ -18,8 +18,9 @@ public class Ticket {
     @JoinColumn(name = "flight_id")
     private Flight flight;
 
-    // user or customer
+    // user or customer needs to be created on the fly first.
     @OneToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     public Ticket() {}

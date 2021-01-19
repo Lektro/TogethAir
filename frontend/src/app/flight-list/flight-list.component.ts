@@ -38,6 +38,7 @@ export class FlightListComponent implements OnInit {
       return this.ngOnInit();
     })
   }
+  // needs to have a valid userId before we can create the ticket
   orderTickets(id: number) {
     this.ticketService.create(this.id).subscribe(flightData => {
       this.flight = flightData;

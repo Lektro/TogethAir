@@ -2,8 +2,8 @@ package com.togethair.restcontroller;
 
 import com.sun.istack.NotNull;
 import com.togethair.model.Ticket;
+import com.togethair.model.User;
 import com.togethair.service.TicketService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "http://localhost:4200")
 public class TicketRestController {
 
-    private final TicketService ticketService;
+    private TicketService ticketService;
 
     public TicketRestController (TicketService ticketService){ this.ticketService = ticketService; }
 
@@ -20,7 +20,7 @@ public class TicketRestController {
        return ticketService.getAllTickets();
     }
 
-    /// ticket needs a user ID aswell oops
+    /// ticket needs a user ID aswell oops not sure how to inject
     @PostMapping(value = {"/createTickets"})
     public Ticket createTicket(@RequestBody Ticket ticket) { return ticketService.save(ticket); }
 }

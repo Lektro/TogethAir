@@ -4,10 +4,7 @@ import com.sun.istack.NotNull;
 import com.togethair.model.Flight;
 import com.togethair.model.User;
 import com.togethair.service.UserService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 // need controller for users then we are able to assign tickets
 @RestController
@@ -24,5 +21,8 @@ public class UserRestController {
     public @NotNull
     Iterable<User> getUsers() {
         return userService.getAllUsers();
+    }
+    @PostMapping(value = {"/addUser"})
+    public User addUser(@RequestBody User user) { return userService.save(user);
     }
 }

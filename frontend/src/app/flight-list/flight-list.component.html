@@ -47,3 +47,7 @@
     </div>
   </div>
 </div>
+
+<!--    still need to implement the pipe with ng generate and route it?-->
+  <input type="search" [(ngModel)] = flight><div *ngFor="let flight of flights | filterPipe: flight.departureAirport">
+  </div>

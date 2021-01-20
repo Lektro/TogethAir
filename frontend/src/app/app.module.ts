@@ -16,6 +16,7 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { TicketFormComponent } from './ticket-form/ticket-form.component';
 import { AirlineFormComponent } from './airline-form/airline-form.component';
 import { FlightDetailsComponent } from './flight-details/flight-details.component';
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { FlightDetailsComponent } from './flight-details/flight-details.componen
     UserFormComponent,
     TicketFormComponent,
     AirlineFormComponent,
-    FlightDetailsComponent
+    FlightDetailsComponent,
+    FilterPipePipe
 
   ],
 

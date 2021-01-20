@@ -39,11 +39,11 @@ export class FlightListComponent implements OnInit {
     })
   }
   // needs to have a valid userId before we can create the ticket
-  orderTickets(id: number) {
+/*  orderTickets(id: number) {
     this.ticketService.create(this.id).subscribe(flightData => {
       this.flight = flightData;
     })
-  }
+  }*/
 /*
   update(id: number): {
     this.flightService.update(id).toPromise().then(() => {

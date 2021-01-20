@@ -3,6 +3,10 @@ import {UserService} from "../service/user.service";
 import {User} from "../model/user";
 import {TicketService} from "../service/ticket.service";
 import {Ticket} from "../model/ticket";
+import {Flight} from "../model/flight";
+import {FlightService} from "../service/flight.service";
+import {AirlineService} from "../service/airline.service";
+import {Airline} from "../model/airline";
 
 @Component({
   selector: 'app-ticket-list',
@@ -11,12 +15,14 @@ import {Ticket} from "../model/ticket";
 })
 export class TicketListComponent implements OnInit {
 
+
   tickets: Ticket[] = [];
   // I need to grab the other controllers aswell? the list does not get seeded yet
-  constructor(private ticketService: TicketService) { }
+  constructor(private ticketService: TicketService) {
+  }
 
   ngOnInit() {
-    this.ticketService.findAll().subscribe((ticketData: any) => {
+    this.ticketService.findAll().toPromise().then((ticketData) => {
       this.tickets = ticketData
     });
   }

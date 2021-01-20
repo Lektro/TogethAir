@@ -23,12 +23,12 @@
         <tr *ngFor="let ticket of tickets" >
           <td>{{ ticket.id}}</td>
           <!--          I can access all the flight and user info via the ticket service -->
-          <td>{{ ticket.flight.flightNumber }}</td>
-          <td>{{ ticket.user.name }}</td>
-          <td>{{ ticket.flight.departureAirport.name }}</td>
-          <td>{{ ticket.flight.arrivalAirport.name }}</td>
-          <td>{{ ticket.flight.advertisedPrice }}</td>
-          <td>{{ ticket.flight.airline.name }}</td>
+          <td>{{ ticket.flight?.flightNumber }}</td>
+          <td>{{ ticket.user?.name }}</td>
+          <td>{{ ticket.flight?.departureAirport?.name }}</td>
+          <td>{{ ticket.flight?.arrivalAirport?.name }}</td>
+          <td>{{ ticket.flight?.advertisedPrice }}</td>
+          <td>{{ ticket.flight?.airline?.name }}</td>
 <!--          <td>{{ ticket.paymentStatus }}</td>-->
 <!--          <td><a routerLink="/tickets" class="btn btn-info">Details</a></td>-->
         </tr>

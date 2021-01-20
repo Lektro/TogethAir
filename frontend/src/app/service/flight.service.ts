@@ -21,8 +21,8 @@ export class FlightService {
 
   }
 
-  public findAll() {
-    return this.http.get(this.flightsUrl);
+  public findAll(): Observable<Flight[]> {
+    return this.http.get<Flight[]>(this.flightsUrl);
   }
 
   public findAllAirports(): Observable<Airport[]> {

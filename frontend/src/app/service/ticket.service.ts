@@ -7,11 +7,14 @@ import {HttpClient} from "@angular/common/http";
 })
 export class TicketService {
 
-  private readonly ticketUrl = 'http://localhost:8080/api/createTickets';
-
+  private readonly createTicketUrl = 'http://localhost:8080/api/createTickets';
+  private readonly ticketUrl = 'http://localhost:8080/api/tickets';
   constructor(private http: HttpClient) { }
 
   public create(data: any): Observable<any> {
-    return this.http.post(this.ticketUrl, data);
+    return this.http.post(this.createTicketUrl, data);
+  }
+  public findAll() {
+    return this.http.get(this.ticketUrl);
   }
 }

@@ -21,6 +21,6 @@ public class TicketRestController {
     }
 
     /// ticket needs a user ID aswell oops not sure how to inject
-    @PostMapping(value = {"/createTickets"})
+    @PostMapping(value = {"/createTicket"})
     public Ticket createTicket(@RequestBody Ticket ticket) { return ticketService.save(ticket); }
 }

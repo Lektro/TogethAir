@@ -1,0 +1,30 @@
+
+<div class="text-center">
+  <h1>All Registered Tickets</h1>
+</div>
+
+<div class="card my-5">
+  <div class="card-body">
+    <div class="table-responsive-sm">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Flight ID</th>
+          <th scope="col">User ID</th>
+          <!--    <th scope="col">Update</th>-->
+          <th scope="col">Ticket Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let ticket of tickets" >
+          <td>{{ ticket.id }}</td>
+          <td>{{ ticket.flight_id }}</td>
+          <td>{{ ticket.user_id }}</td>
+          <td><a routerLink="/tickets" class="btn btn-info">Details</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

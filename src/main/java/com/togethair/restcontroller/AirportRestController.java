@@ -22,7 +22,7 @@ public class AirportRestController {
         return airportService.getAllAirports();
     }
 
-    // redirect ging mis hier
+    // redirect ging mis hier get en post kan 1 keer op 1 url daarna moet je andere endpoints voorzien
     @PostMapping(value = {"/airports"})
     public Airport createAirport(@RequestBody Airport airport) { return airportService.save(airport);
     }

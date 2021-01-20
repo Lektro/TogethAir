@@ -8,6 +8,8 @@ import {AirlineService} from "../service/airline.service";
 import {Airport} from "../model/airport";
 import {Airline} from "../model/airline";
 import {Flight} from "../model/flight";
+import {UserService} from "../service/user.service";
+import {User} from "../model/user";
 
 @Component({
   selector: 'app-ticket-form',
@@ -24,12 +26,13 @@ export class TicketFormComponent implements OnInit {
   airports: Airport[] = [];
   airlines: Airline[] = [];
   flights: Flight[] = [];
-
+  users: User[] = [];
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private flightService: FlightService,
-              private ticketService: TicketService,) {
+              private ticketService: TicketService,
+              private userService: UserService) {
     this.ticket = new Ticket();
     this.airline = new Airline();
     this.flight = new Flight();
@@ -44,6 +47,7 @@ export class TicketFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.flightService.findAll().subscribe(flightData => this.flights = flightData)
+    this.userService.findAll().subscribe(userData =>this.users = userData )
   }
   toggle(): void {}
 }

@@ -7,52 +7,6 @@
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #ticketForm="ngForm">
 
-<!--
-      <div class="form-group">
-        <label for="basePrice">Enter The Base Price</label>
-        <input type="number" [(ngModel)]="ticket.flight"
-               class="form-control"
-               id="basePrice"
-               name="basePrice"
-               placeholder="Enter the Base Price"
-               required #basePrice="ngModel">
-      </div>
-      <div *ngIf="basePrice.invalid && (basePrice.dirty || basePrice.touched)" class="alert alert-danger" >Price is required</div>
-
-      <div class="form-group">
-        <label for="flightNumber">Enter The Flight Number</label>
-        <input type="text" [(ngModel)]="flight.flightNumber"
-               class="form-control"
-               id="flightNumber"
-               name="flightNumber"
-               placeholder="Enter the Flight Number"
-               required #flightNumber="ngModel">
-      </div>
-      <div *ngIf="flightNumber.invalid && (flightNumber.dirty || flightNumber.touched)" class="alert alert-danger" >Flight Number is required</div>
-
-      <div class="form-group">
-        <label for="flightDuration">Enter The Flight Duration</label>
-        <input type="number" [(ngModel)]="flight.flightDuration"
-               class="form-control"
-               id="flightDuration"
-               name="flightDuration"
-               placeholder="Enter the Flight Duration"
-               required #flightDuration="ngModel">
-      </div>
-      <div *ngIf="flightDuration.invalid && (flightDuration.dirty || flightDuration.touched)" class="alert alert-danger" >Flight Duration is required</div>
-
-      <div class="form-group">
-        <label for="totalSeats">Enter Total Amount of Seats</label>
-        <input type="number" [(ngModel)]="flight.totalSeats"
-               class="form-control"
-               id="totalSeats"
-               name="totalSeats"
-               placeholder="Enter the total Amount of seats"
-               required #totalSeats="ngModel">
-      </div>
-      <div *ngIf="totalSeats.invalid && (totalSeats.dirty || totalSeats.touched)" class="alert alert-danger" >Total Number of seats is required</div>
--->
-
       <div class="form-group">
         <label for="flightNumber">Select Flight Number</label>
         <select [(ngModel)]="ticket.flight" class="custom-select" id="flightNumber" name="flightNumber" style="width: 100%;">
@@ -61,35 +15,14 @@
         </select>
       </div>
 
-<!--      <div class="form-group">
-        <label for="arrivalAirport">Select Arrival Airport</label>
-        <select [(ngModel)]="flight.arrivalAirport "class="custom-select" id="arrivalAirport" name="arrivalAirport" style="width: 100%;">
-          <option disabled value="undefined">Select Arrival Airport</option>
-          <option *ngFor="let airport of airports" [ngValue]="airport" >{{ airport.name}}</option>
+      <div class="form-group">
+        <label for="flightNumber">Select A User</label>
+        <select [(ngModel)]="ticket.user" class="custom-select" id="name" name="name" style="width: 100%;">
+          <option disabled value="undefined">Select A User</option>
+          <option *ngFor="let user of users" [ngValue]="user" >{{user.name}}</option>
         </select>
       </div>
 
-      <div class="form-group">
-        <label for="arrivalAirport">Select Airline Company</label>
-        &lt;!&ndash;        ng model  en name attribute NEEDED here to select the proper fields in the database model&ndash;&gt;
-        <select [(ngModel)]="flight.airline" class="custom-select" id="airline" name="airline" style="width: 100%;">
-          <option disabled value="undefined">Select Airline Company</option>
-          <option *ngFor="let airline of airlines" [ngValue]="airline" >{{ airline.name}}</option>
-        </select>
-      </div>-->
-
-      <!--      <div class="input-group  col-sm-12">
-              <input class="form-control"
-                     placeholder="yyyy-mm-dd"
-                     name="appointmentTime"
-                     [(ngModel)]="flight.departureTime"
-                     ngbDatepicker>
-              <div class="input-group-append">
-                <button
-                  class="btn btn-outline-secondary calendar"
-                  type="button"><i class="fa fa-calendar"></i></button>
-              </div>
-            </div>-->
       <button type="submit" class="btn btn-info">Submit</button>
     </form>
   </div>

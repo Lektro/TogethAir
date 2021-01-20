@@ -18,8 +18,8 @@ export class UserService {
   public create(data: any): Observable<any> {
     return this.http.post(this.addUserUrl, data);
   }
-  public findAll() {
-    return this.http.get(this.userUrl);
+  public findAll(): Observable<User[]> {
+    return this.http.get<User[]>(this.userUrl);
   }
   findById(id: number): Observable<any> {
     return this.http.get(`${this.getUserByIdUrl}/${id}`)

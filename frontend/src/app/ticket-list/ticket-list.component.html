@@ -10,18 +10,27 @@
         <thead class="thead-dark">
         <tr>
           <th scope="col">ID</th>
-          <th scope="col">Flight ID</th>
-          <th scope="col">User ID</th>
-          <!--    <th scope="col">Update</th>-->
-          <th scope="col">Ticket Details</th>
+          <th scope="col">Flight Number</th>
+          <th scope="col">Customer Name</th>
+          <th scope="col">Departure Airport</th>
+          <th scope="col">Arrival Airport</th>
+          <th scope="col">Advertised Price</th>
+          <th scope="col">Airline Provider</th>
+<!--          <th scope="col">Payment Status</th>-->
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let ticket of tickets" >
-          <td>{{ ticket.id }}</td>
-          <td>{{ ticket.flight_id }}</td>
-          <td>{{ ticket.user_id }}</td>
-          <td><a routerLink="/tickets" class="btn btn-info">Details</a></td>
+          <td>{{ ticket.id}}</td>
+          <!--          I can access all the flight and user info via the ticket service -->
+          <td>{{ ticket.flight.flightNumber }}</td>
+          <td>{{ ticket.user.name }}</td>
+          <td>{{ ticket.flight.departureAirport.name }}</td>
+          <td>{{ ticket.flight.arrivalAirport.name }}</td>
+          <td>{{ ticket.flight.advertisedPrice }}</td>
+          <td>{{ ticket.flight.airline.name }}</td>
+<!--          <td>{{ ticket.paymentStatus }}</td>-->
+<!--          <td><a routerLink="/tickets" class="btn btn-info">Details</a></td>-->
         </tr>
         </tbody>
       </table>

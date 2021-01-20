@@ -1,15 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import {Airline} from "../model/airline";
+import {ActivatedRoute, Router} from "@angular/router";
+import {AirportService} from "../service/airport.service";
+import {Ticket} from "../model/ticket";
+import {TicketService} from "../service/ticket.service";
+import {Airport} from "../model/airport";
+import {AirlineService} from "../service/airline.service";
 
 @Component({
   selector: 'app-airline-form',
   templateUrl: './airline-form.component.html',
   styleUrls: ['./airline-form.component.css']
 })
-export class AirlineFormComponent implements OnInit {
+export class AirlineFormComponent {
+  airline: Airline;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private airlineService: AirlineService) {
+    this.airline = new Airline();
   }
 
+  onSubmit() {
+    this.airlineService.save(this.airline).subscribe(result => this.gotoAirlineList());
+  }
+
+  gotoAirlineList() {
+    this.router.navigate(['/airlines']);
+  }
 }

@@ -14,7 +14,7 @@ export class AirportFormComponent {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private airportService: AirportService,) {
+              private airportService: AirportService) {
     this.airport = new Airport();
   }
 

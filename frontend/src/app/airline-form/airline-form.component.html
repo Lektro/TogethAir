@@ -1,4 +1,38 @@
 
+
 <div class="text-center">
-  <h1>Insert Airline Form here</h1>
+  <h1>Add New Airline Here</h1>
+</div>
+
+<div class="card ">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #airlineForm="ngForm">
+
+      <div class="form-group">
+        <label for="name">Enter Airline Name</label>
+        <input id="name"
+               name="name"
+               type="text"
+               class="form-control"
+               [(ngModel)]="airline.name"
+               placeholder="Enter the Airport Name"
+               required #name="ngModel">
+      </div>
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger" >Name is required</div>
+
+      <div class="form-group">
+        <label for="companyDetails">Enter Company Details</label>
+
+        <input id="companyDetails"
+               name="companyDetails"
+               type="text"
+               class="form-control"
+               [(ngModel)]="airline.companyDetails"
+               placeholder="Enter the Airline Company Details"
+               required #companyDetails="ngModel">
+      </div>
+      <div *ngIf="companyDetails.invalid && (companyDetails.dirty || companyDetails.touched)" class="alert alert-danger" >Airline Company details are required</div>
+      <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+  </div>
 </div>

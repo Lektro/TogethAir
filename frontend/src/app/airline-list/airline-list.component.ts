@@ -17,4 +17,5 @@ export class AirlineListComponent implements OnInit {
     this.airlineService.findAll().subscribe(data => { this.airlines = data;
     });
   }
+
 }

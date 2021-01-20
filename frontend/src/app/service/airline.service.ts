@@ -8,9 +8,12 @@ import {Observable} from "rxjs";
 })
 export class AirlineService {
     private readonly airlineUrl: string;
+    private createAirlineUrl: string;
+
 
     constructor(private http: HttpClient) {
       this.airlineUrl = 'http://localhost:8080/api/airlines'
+      this.createAirlineUrl = 'http://localhost:8080/api/createAirlines'
     }
 
     public findAll(): Observable<Airline[]> {
@@ -18,7 +21,7 @@ export class AirlineService {
     }
 
     public save(airline: Airline) {
-      return this.http.post<Airline>(this.airlineUrl, airline);
+      return this.http.post<Airline>(this.createAirlineUrl, airline);
     }
 
     public findAllAirlines(): Observable<Airline[]> {

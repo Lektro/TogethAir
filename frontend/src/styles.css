@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
 .navbar-container {
   position: static;
 
@@ -9,4 +10,32 @@
   bottom: 0px;
   width:100%;
 
+}
+.intro-header {
+
+}
+.intro-2 {
+  background: url("assets/img/airplane.png");
+  background-size: cover;
+  height: 100%;
+  background-repeat: no-repeat;
+
+}
+.view {
+  height: 100vh !important;
+}
+.full-bg-img {
+  height: 100%;
+}
+.rgba-gradient .full-bg-img {
+  background: linear-gradient(45deg, rgba(83, 125, 210, 0.4), rgba(178, 30, 123, 0.4) 100%);
+}
+
+@media (max-width: 740px) {
+  .full-height,
+  .full-height body,
+  .full-height header,
+  .full-height header .view {
+    height: 1040px;
+  }
 }

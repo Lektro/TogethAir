@@ -1,2 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+.navbar-container {
+  position: static;
+
+}
+.footer-container {
+  position: fixed;
+  bottom: 0px;
+  width:100%;
+
+}

@@ -22,6 +22,7 @@ public class UserRestController {
     Iterable<User> getUsers() {
         return userService.getAllUsers();
     }
+
     @PostMapping(value = {"/addUser"})
     public User addUser(@RequestBody User user) { return userService.save(user);
     }

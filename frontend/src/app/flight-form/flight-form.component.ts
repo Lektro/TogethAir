@@ -44,4 +44,5 @@ export class FlightFormComponent implements OnInit {
       this.airlineService.findAll().subscribe(airlineResult => this.airlines = airlineResult);
   }
   toggle(): void {}
+
 }

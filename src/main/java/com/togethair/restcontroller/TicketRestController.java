@@ -23,4 +23,10 @@ public class TicketRestController {
     /// ticket needs a user ID aswell oops not sure how to inject
     @PostMapping(value = {"/createTickets"})
     public Ticket createTicket(@RequestBody Ticket ticket) { return ticketService.save(ticket); }
+
+    @DeleteMapping("/tickets/{id}")
+    public void deleteFlight(@PathVariable Long id) {
+        ticketService.deleteById(id);
+    }
+
 }

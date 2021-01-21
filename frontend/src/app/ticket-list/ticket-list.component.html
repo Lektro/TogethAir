@@ -16,7 +16,8 @@
           <th scope="col">Arrival Airport</th>
           <th scope="col">Advertised Price</th>
           <th scope="col">Airline Provider</th>
-<!--          <th scope="col">Payment Status</th>-->
+          <th scope="col">Ticket Paid</th>
+          <th scope="col">Delete Ticket</th>
         </tr>
         </thead>
         <tbody>
@@ -29,8 +30,10 @@
           <td>{{ ticket.flight?.arrivalAirport?.name }}</td>
           <td>{{ ticket.flight?.advertisedPrice }}</td>
           <td>{{ ticket.flight?.airline?.name }}</td>
-<!--          <td>{{ ticket.paymentStatus }}</td>-->
-<!--          <td><a routerLink="/tickets" class="btn btn-info">Details</a></td>-->
+          <td>{{ ticket.paymentStatus }}</td>
+          <td><a routerLink="/tickets" (click)="delete(ticket.id!)" class="btn btn-danger">Delete Ticket</a></td>
+
+          <!--          <td><a routerLink="/tickets" class="btn btn-info">Details</a></td>-->
         </tr>
         </tbody>
       </table>

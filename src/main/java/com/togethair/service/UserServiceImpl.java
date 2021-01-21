@@ -1,6 +1,5 @@
 package com.togethair.service;
 
-import com.togethair.model.Flight;
 import com.togethair.model.User;
 import com.togethair.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -24,5 +23,4 @@ public class UserServiceImpl implements UserService {
     public User save(User user) {
         return userRepository.save(user);
     }
-
 }

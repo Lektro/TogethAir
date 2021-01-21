@@ -5,8 +5,6 @@ import com.togethair.repository.AirlineRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
-
 @Service
 @Transactional
 public class AirlineServiceImpl implements AirlineService {
@@ -18,14 +16,10 @@ public class AirlineServiceImpl implements AirlineService {
     }
 
     @Override
-    public Iterable<Airline> getAllAirlines() {
-        return airlineRepository.findAll();
-
-    }
+    public Iterable<Airline> getAllAirlines() { return airlineRepository.findAll(); }
 
     @Override
     public Airline save(Airline airline) {
         return airlineRepository.save(airline);
     }
-
 }

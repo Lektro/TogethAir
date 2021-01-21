@@ -42,7 +42,7 @@ public class Flight {
     @JoinColumn(name="fk_airline_id")
     private Airline airline;
 
-    // vital for prototype but needs to be split into separate travel classes
+    // vital for prototype but needs to be split into separate travel classes and figure out how to keep track of stock
     private int totalSeats;
 
     private int totalAvailableSeats;
@@ -62,11 +62,11 @@ public class Flight {
     @Column(nullable = false)
     private String flightNumber;
 
-//    I could choose to insert string here if the front end gives to much trouble the flight list is out of scope anyway
+    // I could choose to insert string here if the front end gives to much trouble the flight list data is out of scope anyway
+    // got a small calander to work in angular but it would not post to the database. Stuck for the moment
     @Column(name = "departure_time", columnDefinition = "DATETIME")
     private LocalDateTime departureTime;
 
-    //    I could choose to insert string here if the front end gives to much trouble the flight list is out of scope anyway
     @Column(name = "arrival_time", columnDefinition = "DATETIME")
     private LocalDateTime arrivalTime;
 

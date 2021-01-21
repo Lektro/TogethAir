@@ -5,4 +5,6 @@ export class Ticket {
     id: number | undefined;
     flight: Flight | undefined;
     user: User | undefined;
+    paymentStatus: boolean | undefined;
+
 }

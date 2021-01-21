@@ -17,6 +17,7 @@ public class Airline {
     @Column(nullable = false, length = 100)
     private String name;
 
+    /// extra fields for HQ address etc?
     @Column(nullable = false, length = 256)
     private String companyDetails;
 

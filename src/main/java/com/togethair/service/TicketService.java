@@ -7,5 +7,5 @@ import org.springframework.stereotype.Service;
 public interface TicketService {
     Iterable<Ticket> getAllTickets();
     Ticket save (Ticket ticket);
-
+    void deleteById(Long id);
 }

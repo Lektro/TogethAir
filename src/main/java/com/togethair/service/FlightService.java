@@ -2,7 +2,6 @@ package com.togethair.service;
 
 import com.togethair.model.Flight;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
 
 @Service

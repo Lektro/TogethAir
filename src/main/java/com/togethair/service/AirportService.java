@@ -7,5 +7,4 @@ import org.springframework.stereotype.Service;
 public interface AirportService {
     Iterable<Airport> getAllAirports();
     Airport save(Airport airport);
-
 }

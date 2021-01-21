@@ -5,4 +5,5 @@ export class User {
   address: string | undefined;
   emailAddress: string | undefined;
   telephoneNumber: string | undefined;
+  userRole: string | undefined;
 }

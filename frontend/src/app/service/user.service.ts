@@ -27,4 +27,5 @@ export class UserService {
   public save(user: User) {
     return this.http.post<Flight>(this.addUserUrl, user);
   }
+
 }

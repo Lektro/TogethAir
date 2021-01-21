@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 })
 export class AirlineService {
     private readonly airlineUrl: string;
-    private createAirlineUrl: string;
+    private readonly createAirlineUrl: string;
 
 
     constructor(private http: HttpClient) {

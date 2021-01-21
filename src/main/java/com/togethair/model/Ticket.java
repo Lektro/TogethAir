@@ -23,6 +23,9 @@ public class Ticket {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @Column(name = "payment_status", columnDefinition="tinyint(1) default 0")
+    private Boolean paymentStatus;
+
     public Ticket() {}
 
     public Ticket(Long id, Flight flight, User user) {
@@ -53,6 +56,14 @@ public class Ticket {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Boolean isPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(Boolean paymentStatus) {
+        this.paymentStatus = paymentStatus;
     }
 
     @Override

@@ -23,4 +23,8 @@ export class TicketService {
   public save(ticket: Ticket) {
     return this.http.post<Ticket>(this.createTicketUrl, ticket);
   }
+  // mooi voorbeeld om maar 1 url te gebruiken in uw back end observable to actually grab the object
+  delete(id: number): Observable<Ticket> {
+    return this.http.delete<Ticket>(`${this.ticketUrl}/${id}`);
+  }
 }

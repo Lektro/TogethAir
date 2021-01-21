@@ -12,9 +12,11 @@
           <th scope="col">Name</th>
           <th scope="col">Address</th>
           <th scope="col">E-mail</th>
+          <th scope="col">Telephone Number</th>
+          <th scope="col">Permission Level</th>
 
           <!--    <th scope="col">Update</th>-->
-          <th scope="col">Telephone Number</th>
+
         </tr>
         </thead>
         <tbody>
@@ -24,6 +26,7 @@
           <td>{{ user.address }}</td>
           <td>{{ user.emailAddress }}</td>
           <td>{{ user.telephoneNumber }}</td>
+          <td>{{ user.userRole }}</td>
           <!--        *ngIf only displays on actual value's and otherwise skips check happens on front end part -->
           <!--        ternary if statement to display a default value if departureAirport equals undefined-->
           <!--        condition ? exprIfTrue : exprIfFalse-->

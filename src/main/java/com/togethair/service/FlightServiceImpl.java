@@ -4,7 +4,6 @@ import com.togethair.model.Flight;
 import com.togethair.repository.FlightRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.Optional;
 
 @Service

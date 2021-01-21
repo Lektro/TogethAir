@@ -23,6 +23,9 @@ public class User {
     @Column(nullable = false, length = 100)
     private String telephoneNumber;
 
+    @Enumerated(EnumType.STRING)
+    private UserRole userRole;
+
     public User() {
 
     }
@@ -74,4 +77,13 @@ public class User {
         this.id = id;
     }
 
+    // get and set roles
+
+    public UserRole getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
+    }
 }

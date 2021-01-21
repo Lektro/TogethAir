@@ -1,3 +1,45 @@
+<div class="card my-5">
+  <div class="card-body">
+    <div class="table-responsive-sm">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Advertised Price</th>
+          <th scope="col">Flight Number</th>
+          <th scope="col">Total Available Seats</th>
+          <th scope="col">Departure Airport</th>
+          <th scope="col">Arrival Airport</th>
+          <th scope="col">Airline</th>
+          <th scope="col">Details</th>
+          <th scope="col">Book</th>
+          <!--    <th scope="col">Update</th>-->
+          <!--        <th scope="col">Delete</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let flight of flights" >
+          <td>{{ flight.id }}</td>
+          <td>{{ flight.advertisedPrice }} EURO</td>
+          <td>{{ flight.flightNumber }}</td>
+          <td>{{ flight.totalAvailableSeats }}</td>
+          <!--        *ngIf only displays on actual value's and otherwise skips check happens on front end part -->
+          <!--        ternary if statement to display a default value if departureAirport equals undefined-->
+          <!--        condition ? exprIfTrue : exprIfFalse-->
+          <td >{{ flight.departureAirport != undefined ? flight.departureAirport.name : "Departure N/A" }}</td>
+          <td >{{ flight.arrivalAirport != undefined ? flight.arrivalAirport.name : "Arrival N/A" }}</td>
+          <td>{{ flight.airline!= undefined ? flight.airline.name :"Airline N/A" }}</td>
+          <td><a [routerLink]="['/getFlightById', flight.id]" class="btn btn-info">Show Details</a></td>
+          <td><a routerLink="/addTicket" class="btn btn-info">Order Ticket</a></td>
+          <!--    <td><a routerLink="/flights" (click)="update(flight.id!)" class="btn btn-info">update Flight</a></td>-->
+          <!--        assert not null on flight.id with ! there will always be an ID on this specifice line rendered-->
+          <!--        <td><a routerLink="/flights" (click)="delete(flight.id!)" class="btn btn-info">Delete Flight</a></td>-->
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 <div class="text-center">
   <h1>Add A New Ticket Here</h1>
 </div>
@@ -21,6 +63,13 @@
           <option disabled value="undefined">Select A User</option>
           <option *ngFor="let user of users" [ngValue]="user" >{{user.name}}</option>
         </select>
+      </div>
+
+      <div class="form-group">
+        <label for="paymentStatus">The Customer has payed his ticket?</label>
+         <p>YES</p>
+        <input type="checkbox" id="paymentStatus" name="paymentStatus" ngModel>
+
       </div>
 
       <button type="submit" class="btn btn-info">Submit</button>

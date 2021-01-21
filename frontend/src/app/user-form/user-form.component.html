@@ -50,14 +50,15 @@
       </div>
       <div *ngIf="telephoneNumber.invalid && (telephoneNumber.dirty || telephoneNumber.touched)" class="alert alert-danger" >Telephone Number is required</div>
 
-<!-- Do want to use this maybe later?
-      <div class="form-group">
-        <label for="departureAirport">Select Departure Airport</label>
-        <select [(ngModel)]="flight.departureAirport" class="custom-select" id="departureAirport" name="departureAirport" style="width: 100%;">
-          <option disabled value="undefined">Select Departure Airport</option>
-          <option *ngFor="let airport of airports" [ngValue]="airport" >{{ airport.name }}</option>
+<!--      <div class="form-group">
+        <label for="userRole">Select Permission Level</label>
+        <select [(ngModel)]="user.userRole" class="custom-select" id="userRole" name="userRole" style="width: 100%;">
+          <option disabled value="undefined">Select Permission Level</option>
+          <option *ngFor="let user of users" [ngValue]="user" >{{ user.toString() }}</option>
         </select>
-      </div>
+      </div>-->
+<!-- Do want to use this maybe later?
+
 
       <div class="form-group">
         <label for="arrivalAirport">Select Arrival Airport</label>

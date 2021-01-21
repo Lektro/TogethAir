@@ -24,4 +24,9 @@ public class TicketServiceImpl implements TicketService {
     public Ticket save(Ticket ticket) {
         return ticketRepository.save(ticket);
     }
+
+    @Override
+    public void deleteById(Long id) {
+
+    }
 }

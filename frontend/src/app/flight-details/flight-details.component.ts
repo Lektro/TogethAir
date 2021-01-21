@@ -1,6 +1,5 @@
 import {Component, Inject, inject, OnInit} from '@angular/core';
 import {Flight} from "../model/flight";
-import {Airport} from "../model/airport";
 import {FlightService} from "../service/flight.service";
 import {AirportService} from "../service/airport.service";
 import {ActivatedRoute} from "@angular/router";

@@ -15,10 +15,10 @@ import {User} from "../model/user";
   styleUrls: ['./ticket-form.component.css']
 })
 export class TicketFormComponent implements OnInit {
-  id: string | null | undefined;
+  public id!: number;
   ticket: Ticket;
   airline: Airline;
-  flight: Flight;
+  flight: Flight = new Flight();
   airport: Airport;
   tickets: Ticket[] = [];
   airports: Airport[] = [];
@@ -44,7 +44,14 @@ export class TicketFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
+    this.route.paramMap.subscribe(params => {
+      this.id = Number.parseInt(<string>params.get('id'));
+    });
+
+    this.flightService.findById(this.id).subscribe(flightData => {
+      this.flight = flightData;
+    })
+
     this.flightService.findAll().subscribe(flightData => this.flights = flightData)
     this.userService.findAll().subscribe(userData =>this.users = userData )
   }

@@ -14,6 +14,9 @@ public class User {
     @Column(nullable = false, length = 100)
     private String name;
 
+    @Column(nullable = false, length = 100)
+    private String password;
+
     @Column(nullable = false, length = 200)
     private String address;
 
@@ -76,7 +79,14 @@ public class User {
         this.id = id;
     }
 
-    // get and set roles
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+// get and set roles
 
     public UserRole getUserRole() {
         return userRole;

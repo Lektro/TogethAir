@@ -66,10 +66,8 @@
       </div>
 
       <div class="form-group">
-        <label for="paymentStatus">The Customer has payed his ticket?</label>
-         <p>YES</p>
-        <input type="checkbox" id="paymentStatus" name="paymentStatus" ngModel>
-
+        <input type="checkbox" name="paymentStatus" [(ngModel)]="ticket.paymentStatus">
+        Ticket has been paid?
       </div>
 
       <button type="submit" class="btn btn-info">Submit</button>

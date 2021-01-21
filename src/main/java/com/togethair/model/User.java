@@ -29,7 +29,6 @@ public class User {
     public User() {
 
     }
-
     // do we need more details? login is not active atm, just userdetails to order a ticket-prototype
 
     public Long getId() {

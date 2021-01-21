@@ -2,7 +2,6 @@ package com.togethair.model;
 
 import javax.persistence.*;
 import java.util.Objects;
-import java.util.Set;
 
 // ticket or reservation not sure, we need to add multiple seats for one booking
 @Entity

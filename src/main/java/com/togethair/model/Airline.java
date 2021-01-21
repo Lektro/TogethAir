@@ -1,9 +1,7 @@
 package com.togethair.model;
 
 //extra info about the specific airline companies
-
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "airline", schema = "togethair")

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from "../service/user.service";
 import {User} from "../model/user";
 import {ActivatedRoute, Router} from "@angular/router";
+import {UserRole} from "../model/userRole";
 
 @Component({
   selector: 'app-user-form',
@@ -10,9 +11,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class UserFormComponent implements OnInit {
   user: User ;
-  users: Object =[];
-
-
+  users: User[] =[];
+  userRole = UserRole;
 
   constructor(private route: ActivatedRoute, private userService: UserService,private router: Router) {
     this.user =  new User();

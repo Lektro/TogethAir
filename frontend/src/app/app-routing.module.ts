@@ -5,18 +5,19 @@ import { FlightFormComponent } from './flight-form/flight-form.component';
 import { AirportListComponent } from "./airport-list/airport-list.component";
 import { AirlineListComponent } from "./airline-list/airline-list.component";
 import { AirportFormComponent } from "./airport-form/airport-form.component";
-import {UserListComponent} from "./user-list/user-list.component";
-import {UserFormComponent} from "./user-form/user-form.component";
-import {TicketFormComponent} from "./ticket-form/ticket-form.component";
-import {AirlineFormComponent} from "./airline-form/airline-form.component";
-import {FlightDetailsComponent} from "./flight-details/flight-details.component";
-import {TicketListComponent} from "./ticket-list/ticket-list.component";
+import { UserListComponent } from "./user-list/user-list.component";
+import { UserFormComponent } from "./user-form/user-form.component";
+import { TicketFormComponent } from "./ticket-form/ticket-form.component";
+import { AirlineFormComponent } from "./airline-form/airline-form.component";
+import { FlightDetailsComponent } from "./flight-details/flight-details.component";
+import { TicketListComponent } from "./ticket-list/ticket-list.component";
 
 const routes: Routes = [
 
     { path: 'addFlight', component: FlightFormComponent },
     { path: 'addAirport', component: AirportFormComponent },
     { path: 'addTicket/:id', component: TicketFormComponent },
+    { path: 'addTicket', component: TicketFormComponent },
     { path: 'addAirline', component: AirlineFormComponent },
     { path: 'addUser', component: UserFormComponent },
 

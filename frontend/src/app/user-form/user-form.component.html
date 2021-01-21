@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h1>Add New User Details Here</h1>
+  <h3>Enter the details for the new User</h3>
 </div>
 
 <div class="card ">
@@ -7,7 +7,7 @@
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
 
       <div class="form-group">
-        <label for="name">Enter The UserName</label>
+        <label for="name">User Name</label>
         <input type="text" [(ngModel)]="user.name"
                class="form-control"
                id="name"
@@ -18,42 +18,42 @@
       <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger" >Username is required</div>
 
       <div class="form-group">
-        <label for="address">Enter your Address</label>
+        <label for="address">Address</label>
         <input type="text" [(ngModel)]="user.address"
                class="form-control"
                id="address"
                name="address"
-               placeholder="Enter your Address"
+               placeholder="Enter the User Address"
                required #address="ngModel">
       </div>
       <div *ngIf="address.invalid && (address.dirty || address.touched)" class="alert alert-danger" >Address is required</div>
 
       <div class="form-group">
-        <label for="emailAddress">Enter your E-mail Address</label>
+        <label for="emailAddress">E-mail Address</label>
         <input type="text" [(ngModel)]="user.emailAddress"
                class="form-control"
                id="emailAddress"
                name="emailAddress"
-               placeholder="Enter your E-mail Address"
+               placeholder="Enter the User E-mail Address"
                required #emailAddress="ngModel">
       </div>
       <div *ngIf="emailAddress.invalid && (emailAddress.dirty || emailAddress.touched)" class="alert alert-danger" >E-mail Address is required</div>
 
       <div class="form-group">
-        <label for="telephoneNumber">Enter your Telephone Number</label>
+        <label for="telephoneNumber">Telephone Number</label>
         <input type="text" [(ngModel)]="user.telephoneNumber"
                class="form-control"
                id="telephoneNumber"
                name="telephoneNumber"
-               placeholder="Enter your Telephone Number"
+               placeholder="Enter the User Telephone Number"
                required #telephoneNumber="ngModel">
       </div>
       <div *ngIf="telephoneNumber.invalid && (telephoneNumber.dirty || telephoneNumber.touched)" class="alert alert-danger" >Telephone Number is required</div>
 
       <div class="form-group">
-        <label for="userRole">Select Permission Level</label>
-        <select [(ngModel)]="user.userRole" class="custom-select" id="userRole" name="userRole" style="width: 100%;">
-          <option disabled value="undefined">Select Permission Level</option>
+        <label for="userRole">User Permission Level</label>
+        <select [(ngModel)]="user" class="custom-select" id="userRole" name="userRole" style="width: 100%;">
+          <option disabled value="undefined">Select User Role</option>
           <option *ngFor="let user of users" [ngValue]="user" >{{ user.userRole }}</option>
         </select>
       </div>

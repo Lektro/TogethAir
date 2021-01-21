@@ -17,6 +17,7 @@
           <th scope="col">Advertised Price</th>
           <th scope="col">Airline Provider</th>
           <th scope="col">Ticket Paid</th>
+          <th scope="col">Flight Details</th>
           <th scope="col">Delete Ticket</th>
         </tr>
         </thead>
@@ -31,6 +32,8 @@
           <td>{{ ticket.flight?.advertisedPrice }}</td>
           <td>{{ ticket.flight?.airline?.name }}</td>
           <td>{{ ticket.paymentStatus }}</td>
+          <td><a [routerLink]="['/getFlightById', ticket.flight.id]" class="btn btn-info">Show Flight Details</a></td>
+
           <td><a routerLink="/deleteTicket" (click)="delete(ticket.id!)" class="btn btn-danger">Delete Ticket</a></td>
 
           <!--          <td><a routerLink="/tickets" class="btn btn-info">Details</a></td>-->

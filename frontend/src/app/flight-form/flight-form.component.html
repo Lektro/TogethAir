@@ -76,15 +76,26 @@
       </div>
 
       <div class="form-group">
-        <label for="departureTime">Enter Departure Time</label>
-        <input type="datetime-local" [ngModel]="flight.departureTime"
+        <label for="departureTime">Enter Departure Date Time</label>
+        <input type="date" [(ngModel)]="flight.departureTime"
                class="form-control"
                id="departureTime"
                name="departureTime"
-               placeholder="Enter the Departure Time "
+               placeholder="Enter the Departure Date Time "
                required #departureTime="ngModel">
       </div>
       <div *ngIf="departureTime.invalid && (departureTime.dirty || departureTime.touched)" class="alert alert-danger" >Invalid DateTime</div>
+
+      <div class="form-group">
+        <label for="arrivalTime">Enter Departure Date Time</label>
+        <input type="date" [(ngModel)]="flight.arrivalTime"
+               class="form-control"
+               id="arrivalTime"
+               name="arrivalTime"
+               placeholder="Enter the Arrival Date Time "
+               required #arrivalTime="ngModel">
+      </div>
+      <div *ngIf="arrivalTime.invalid && (arrivalTime.dirty || arrivalTime.touched)" class="alert alert-danger" >Invalid DateTime</div>
 
       <button type="submit" class="btn btn-info">Submit</button>
     </form>

@@ -12,10 +12,10 @@ import {UserRole} from "../model/userRole";
 export class UserFormComponent implements OnInit {
   user: User ;
   users: User[] =[];
-  userRole = UserRole;
+  userRole = Object.values(UserRole).filter(f => isNaN(Number(f)))
 
-  constructor(private route: ActivatedRoute, private userService: UserService,private router: Router) {
-    this.user =  new User();
+  constructor( private route: ActivatedRoute, private userService: UserService,private router: Router) {
+    this.user = new User();
   }
 
   onSubmit() {
@@ -23,6 +23,7 @@ export class UserFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.userRole.values();
     this.userService.findAll().subscribe(result => this.users = result)
   }
   gotoUserList() {

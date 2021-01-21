@@ -1,4 +1,4 @@
 package com.togethair.model;
 
-public enum UserRole { Admin, TogethAir_Employee, Airline_Employee, User
+public enum UserRole { Admingit st, TogethAir_Employee, Airline_Employee, User
 }

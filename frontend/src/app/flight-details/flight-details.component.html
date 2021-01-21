@@ -18,7 +18,7 @@
         <th scope="col">Airline</th>
         <th scope="col">Departure Date & Time</th>
         <th scope="col">Arrival Date & Time</th>
-        <th scope="col">Back To Overview</th>
+        <th scope="col">Back To Flights Overview</th>
         <th scope="col">Book</th>
 <!--        add all details -->
 
@@ -44,7 +44,7 @@
         <td>{{ flight.departureTime | date:'medium' }}</td>
         <td>{{ flight.arrivalTime | date:'medium' }}</td>
 
-        <td><a routerLink="/flights" class="btn btn-info">Back To Overview</a></td>
+        <td><a routerLink="/flights" class="btn btn-info">Back To Flights Overview</a></td>
         <td><a [routerLink]="['/addTicket', flight.id]" class="btn btn-info">Order Ticket {{flight.flightNumber}}</a></td>
 
         <!--    <td><a routerLink="/flights" (click)="update(flight.id!)" class="btn btn-info">update Flight</a></td>-->

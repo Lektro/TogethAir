@@ -52,9 +52,10 @@
 
       <div class="form-group">
         <label for="userRole">User Permission Level</label>
-        <select [(ngModel)]="user" class="custom-select" id="userRole" name="userRole" style="width: 100%;">
+        <select [(ngModel)]="user.userRole" class="custom-select" id="userRole" name="userRole" style="width: 100%;">
           <option disabled value="undefined">Select User Role</option>
-          <option *ngFor="let user of users" [ngValue]="user" >{{ user.userRole }}</option>
+
+          <option *ngFor="let userRole of userRole" [ngValue]="userRole" >{{ userRole }}</option>
         </select>
       </div>
 <!-- Do want to use this maybe later?

@@ -20,15 +20,10 @@ public class Airport {
     @Column(nullable = false)
     private String country;
 
-    // make an Enum based on Regions?
+    // rework to ENUM
     @Column(nullable = false)
     private String region;
 
-    // may be a bit too much
-/*
-    @OneToMany
-    private List<Flight> listFlights = new ArrayList<>();
-*/
 
     public Airport() {
     }
@@ -81,11 +76,4 @@ public class Airport {
         this.region = region;
     }
 
-/*    public List<Flight> getListFlights() {
-        return listFlights;
-    }
-
-    public void setListFlights(List<Flight> listFlights) {
-        this.listFlights = listFlights;
-    }*/
 }

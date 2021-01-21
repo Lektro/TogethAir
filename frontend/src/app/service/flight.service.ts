@@ -46,11 +46,6 @@ export class FlightService {
     return this.http.delete(`${this.flightsUrl}/${id}`);
   }
 
-  // search werkt nog niet
-  //public findByName(name: any): Observable<Flight[]> {
-    //return this.http.get<Flight[]>(`${this.flightsUrl}?name=${name}`);
-  //}
-
   findById(id: number): Observable<any> {
     return this.http.get(`${this.getFlightByIdUrl}/${id}`)
   }

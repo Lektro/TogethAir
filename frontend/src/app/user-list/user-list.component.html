@@ -14,9 +14,6 @@
           <th scope="col">E-mail</th>
           <th scope="col">Telephone Number</th>
           <th scope="col">Permission Level</th>
-
-          <!--    <th scope="col">Update</th>-->
-
         </tr>
         </thead>
         <tbody>
@@ -27,18 +24,6 @@
           <td>{{ user.emailAddress }}</td>
           <td>{{ user.telephoneNumber }}</td>
           <td>{{ user.userRole }}</td>
-          <!--        *ngIf only displays on actual value's and otherwise skips check happens on front end part -->
-          <!--        ternary if statement to display a default value if departureAirport equals undefined-->
-          <!--        condition ? exprIfTrue : exprIfFalse-->
-<!--          <td >{{ flight.departureAirport != undefined ? flight.departureAirport.name : "Departure N/A" }}</td>-->
-<!--          <td >{{ flight.arrivalAirport != undefined ? flight.arrivalAirport.name : "Arrival N/A" }}</td>-->
-<!--          <td>{{ flight.airline!= undefined ? flight.airline.name :"Airline N/A" }}</td>-->
-<!--          <td><a [routerLink]="['/getFlightById', flight.id]" class="btn btn-info">Show Details {{flight.id}}</a></td>-->
-<!--          <td><a [routerLink]="['/addTicket', flight.id]" (click)="orderTickets(flight.id)" class="btn btn-info">Order Ticket</a></td>-->
-
-          <!--    <td><a routerLink="/flights" (click)="update(flight.id!)" class="btn btn-info">update Flight</a></td>-->
-          <!--        assert not null on flight.id with ! there will always be an ID on this specifice line rendered-->
-<!--          <td><a routerLink="/flights" (click)="delete(flight.id!)" class="btn btn-info">Delete Flight</a></td>-->
         </tr>
         </tbody>
       </table>

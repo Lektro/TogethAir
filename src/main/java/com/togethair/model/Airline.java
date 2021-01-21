@@ -1,6 +1,5 @@
 package com.togethair.model;
 
-//extra info about the specific airline companies
 import javax.persistence.*;
 
 @Entity
@@ -18,16 +17,6 @@ public class Airline {
     /// extra fields for HQ address etc?
     @Column(nullable = false, length = 256)
     private String companyDetails;
-
-/*
-    // useful later on but not sure about prototype
-    @OneToMany
-    private Set<Ticket> ticketSet;
-
-    // useful later on but not sure about prototype
-    @OneToMany
-    private Set<Flight> flightSet;
-*/
 
     public Airline(Long id, String name) {
         this.id = id;
@@ -60,24 +49,6 @@ public class Airline {
     public void setCompanyDetails(String companyDetails) {
         this.companyDetails = companyDetails;
     }
-
-/*
-    public Set<Ticket> getTicketSet() {
-        return ticketSet;
-    }
-
-    public void setTicketSet(Set<Ticket> ticketSet) {
-        this.ticketSet = ticketSet;
-    }
-
-    public Set<Flight> getFlightSet() {
-        return flightSet;
-    }
-
-    public void setFlightSet(Set<Flight> flightSet) {
-        this.flightSet = flightSet;
-    }
-*/
 
     @Override
     public String toString() {

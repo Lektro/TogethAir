@@ -23,6 +23,4 @@ public class AirlineRestController {
 
     @PostMapping("/createAirlines")
     public Airline createAirline(@RequestBody Airline airline) {return airlineService.save(airline); }
-
-
 }

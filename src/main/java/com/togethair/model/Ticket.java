@@ -3,7 +3,7 @@ package com.togethair.model;
 import javax.persistence.*;
 import java.util.Objects;
 
-// ticket or reservation not sure, we need to add multiple seats for one booking
+// Make a booking class so you can keep track off multiple tickets
 @Entity
 @Table(name = "ticket", schema = "togethair")
 public class Ticket {

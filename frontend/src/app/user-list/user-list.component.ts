@@ -7,6 +7,7 @@ import {User} from "../model/user";
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
+
 export class UserListComponent implements OnInit {
   users : User[] = [];
   constructor(private userService: UserService) { }
@@ -16,5 +17,4 @@ export class UserListComponent implements OnInit {
       this.users = userData;
     })
   }
-
 }

@@ -1,7 +1,6 @@
   <div class="text-center">
     <h3>Available Flights</h3>
   </div>
-
 <div class="card my-5">
   <div class="card-body">
     <div class="table-responsive-sm">
@@ -17,8 +16,6 @@
         <th scope="col">Airline</th>
         <th scope="col">Flight Details</th>
         <th scope="col">Book</th>
-<!--    <th scope="col">Update</th>-->
-<!--        <th scope="col">Delete</th>-->
       </tr>
       </thead>
       <tbody>
@@ -35,16 +32,9 @@
         <td>{{ flight.airline!= undefined ? flight.airline.name :"Airline N/A" }}</td>
         <td><a [routerLink]="['/getFlightById', flight.id]" class="btn btn-info">Show Flight Details</a></td>
         <td><a [routerLink]="['/addTicket', flight.id]" class="btn btn-info">Order Ticket {{flight.flightNumber}}</a></td>
-<!--    <td><a routerLink="/flights" (click)="update(flight.id!)" class="btn btn-info">update Flight</a></td>-->
-<!--        assert not null on flight.id with ! there will always be an ID on this specifice line rendered-->
-<!--        <td><a routerLink="/flights" (click)="delete(flight.id!)" class="btn btn-info">Delete Flight</a></td>-->
       </tr>
       </tbody>
     </table>
     </div>
   </div>
 </div>
-
-<!--    still need to implement the pipe with ng generate and route it?-->
-<!--  <input type="search" [(ngModel)] = flight><div *ngFor="let flight of flights | filterPipe: flight.departureAirport">-->
-<!--  </div>-->

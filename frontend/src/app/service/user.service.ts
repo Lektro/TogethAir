@@ -12,7 +12,6 @@ export class UserService {
   private readonly userUrl = 'http://localhost:8080/api/users';
   private readonly getUserByIdUrl = 'http://localhost:8080/api/getUserById';
 
-
   constructor(private http: HttpClient) { }
 
   public create(data: any): Observable<any> {
@@ -27,5 +26,4 @@ export class UserService {
   public save(user: User) {
     return this.http.post<Flight>(this.addUserUrl, user);
   }
-
 }

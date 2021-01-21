@@ -1,6 +1,5 @@
 package com.togethair.model;
 
-import org.hibernate.annotations.Formula;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -13,8 +12,6 @@ public class Flight {
     @Column(updatable = false, nullable = false)
     private Long id;
 
-    // BigDecimal to map to MySql Decimal also supports get string towards front end
-    // Probably better to use a double, it does not need to be precise for this prototype and the basePrice is out of scope anyway
     private double basePrice;
 
     private double advertisedPrice;
@@ -31,7 +28,6 @@ public class Flight {
     @JoinColumn(name="fk_arrival_airport_id")
     private Airport arrivalAirport;
 
-    // int is probably better here
     @Column(nullable = false)
     private Long flightDuration;
 
@@ -59,8 +55,6 @@ public class Flight {
     @Column(nullable = false)
     private String flightNumber;
 
-    // I could choose to insert string here if the front end gives to much trouble the flight list data is out of scope anyway
-    // got a small calander to work in angular but it would not post to the database. Stuck for the moment
     @Column(name = "departure_time", columnDefinition = "DATETIME")
     private LocalDateTime departureTime;
 
@@ -161,7 +155,6 @@ public class Flight {
         this.arrivalTime = arrivalTime;
     }
 
-    // checks here ?? when ordering a ticket we need to minus one here aswell?
     public int getTotalAvailableSeats() {
         return totalAvailableSeats;
     }
@@ -230,7 +223,7 @@ public class Flight {
         return advertisedPrice;
     }
 
-    @Formula("basePrice * 1,10")
+    //@Formula("basePrice * 1,10")
     //Hibernate Interceptor needed here ,, do your calculations in your service class with a dto please
     public void setAdvertisedPrice(double advertisedPrice) {
         this.advertisedPrice = advertisedPrice;

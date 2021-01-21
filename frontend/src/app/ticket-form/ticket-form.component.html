@@ -19,8 +19,6 @@
           <th scope="col">Departure Date & Time</th>
           <th scope="col">Arrival Date & Time</th>
           <th scope="col">Back To Overview</th>
-          <!--        add all details -->
-
         </tr>
         </thead>
         <tbody>
@@ -31,21 +29,15 @@
           <td>{{ flight.flightDuration }}</td>
           <td>{{ flight.totalSeats }}</td>
           <td>{{ flight.totalAvailableSeats }}</td>
-
           <!--        *ngIf only displays on actual value's and otherwise skips check happens on front end part -->
           <!--        ternary if statement to display a default value if departureAirport equals undefined-->
           <!--        condition ? exprIfTrue : exprIfFalse-->
           <td >{{ flight.departureAirport != undefined ? flight.departureAirport.name : "Departure N/A" }}</td>
           <td >{{ flight.arrivalAirport != undefined ? flight.arrivalAirport.name : "Arrival N/A" }}</td>
           <td> {{ flight.airline!= undefined ? flight.airline.name :"Airline N/A" }}</td>
-
-          <!--        add all details -->
           <td>{{ flight.departureTime | date:'medium' }}</td>
           <td>{{ flight.arrivalTime | date:'medium' }}</td>
-
           <td><a routerLink="/flights" class="btn btn-info">Back To Overview</a></td>
-          <!--    <td><a routerLink="/flights" (click)="update(flight.id!)" class="btn btn-info">update Flight</a></td>-->
-          <!--        assert not null on flight.id with ! there will always be an ID on this specifice line rendered-->
         </tr>
         </tbody>
       </table>
@@ -56,15 +48,13 @@
 <div class="card ">
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #ticketForm="ngForm">
-
       <div class="form-group">
         <label for="flightNumber">Select Flight Number</label>
         <select [(ngModel)]="ticket.flight" class="custom-select" id="flightNumber" name="flightNumber" style="width: 100%;">
           <option disabled value="undefined">Select Flight Number</option>
-          <option *ngFor="let flight of flights" [ngValue]="flight" >{{flight.flightNumber}}</option>
+          <option *ngFor="let flight of flights" [ngValue]="flight" >{{ flight.flightNumber}}</option>
         </select>
       </div>
-
       <div class="form-group">
         <label for="flightNumber">Select A User</label>
         <select [(ngModel)]="ticket.user" class="custom-select" id="name" name="name" style="width: 100%;">
@@ -72,12 +62,10 @@
           <option *ngFor="let user of users" [ngValue]="user" >{{user.name}}</option>
         </select>
       </div>
-
       <div class="form-group">
         <input type="checkbox" name="paymentStatus" [(ngModel)]="ticket.paymentStatus">
         Ticket has been paid?
       </div>
-
       <button type="submit" class="btn btn-info">Submit</button>
     </form>
   </div>

@@ -29,5 +29,4 @@ export class TicketListComponent implements OnInit {
       return this.ngOnInit();
     })
   }
-
 }

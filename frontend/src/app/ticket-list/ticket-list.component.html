@@ -1,6 +1,6 @@
 
 <div class="text-center">
-  <h1>All Registered Tickets</h1>
+  <h3>All Registered Tickets</h3>
 </div>
 
 <div class="card my-5">
@@ -31,7 +31,7 @@
           <td>{{ ticket.flight?.advertisedPrice }}</td>
           <td>{{ ticket.flight?.airline?.name }}</td>
           <td>{{ ticket.paymentStatus }}</td>
-          <td><a routerLink="/tickets" (click)="delete(ticket.id!)" class="btn btn-danger">Delete Ticket</a></td>
+          <td><a routerLink="/deleteTicket" (click)="delete(ticket.id!)" class="btn btn-danger">Delete Ticket</a></td>
 
           <!--          <td><a routerLink="/tickets" class="btn btn-info">Details</a></td>-->
         </tr>

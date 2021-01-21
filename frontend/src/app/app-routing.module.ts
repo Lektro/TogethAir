@@ -16,7 +16,7 @@ const routes: Routes = [
 
     { path: 'addFlight', component: FlightFormComponent },
     { path: 'addAirport', component: AirportFormComponent },
-    { path: 'addTicket', component: TicketFormComponent },
+    { path: 'addTicket/:id', component: TicketFormComponent },
     { path: 'addAirline', component: AirlineFormComponent },
     { path: 'addUser', component: UserFormComponent },
 
@@ -27,7 +27,8 @@ const routes: Routes = [
     { path: 'tickets', component: TicketListComponent},
 
     { path: 'deleteFlight', component: FlightListComponent },
-    { path: 'getFlightById/:id', component: FlightDetailsComponent }
+    { path: 'getFlightById/:id', component: FlightDetailsComponent },
+    { path: 'deleteTicket', component: TicketListComponent }
 
 ];
 

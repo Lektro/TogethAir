@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h1>Flight Details: {{ flight.flightNumber }}</h1>
+  <h3>Flight Details: {{ flight.flightNumber }}</h3>
 </div>
 <div class="card my-5">
   <div class="card-body">
@@ -45,7 +45,7 @@
         <td>{{ flight.arrivalTime | date:'medium' }}</td>
 
         <td><a routerLink="/flights" class="btn btn-info">Back To Overview</a></td>
-        <td><a routerLink="/addTicket" class="btn btn-info">Order Ticket</a></td>
+        <td><a [routerLink]="['/addTicket', flight.id]" class="btn btn-info">Order Ticket {{flight.flightNumber}}</a></td>
 
         <!--    <td><a routerLink="/flights" (click)="update(flight.id!)" class="btn btn-info">update Flight</a></td>-->
         <!--        assert not null on flight.id with ! there will always be an ID on this specifice line rendered-->

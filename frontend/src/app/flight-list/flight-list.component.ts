@@ -3,7 +3,6 @@ import { Flight } from '../model/flight';
 import { Airport } from '../model/airport';
 import { FlightService } from '../service/flight.service';
 import { AirportService} from "../service/airport.service";
-import {ActivatedRoute, Router} from "@angular/router";
 import {TicketService} from "../service/ticket.service";
 
 @Component({

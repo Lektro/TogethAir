@@ -1,7 +1,5 @@
-
   <div class="text-center">
-    <h1>Available Flights</h1>
-
+    <h3>Available Flights</h3>
   </div>
 
 <div class="card my-5">
@@ -36,7 +34,7 @@
         <td >{{ flight.arrivalAirport != undefined ? flight.arrivalAirport.name : "Arrival N/A" }}</td>
         <td>{{ flight.airline!= undefined ? flight.airline.name :"Airline N/A" }}</td>
         <td><a [routerLink]="['/getFlightById', flight.id]" class="btn btn-info">Show Details</a></td>
-        <td><a routerLink="/addTicket" class="btn btn-info">Order Ticket</a></td>
+        <td><a [routerLink]="['/addTicket', flight.id]" class="btn btn-info">Order Ticket {{flight.flightNumber}}</a></td>
 <!--    <td><a routerLink="/flights" (click)="update(flight.id!)" class="btn btn-info">update Flight</a></td>-->
 <!--        assert not null on flight.id with ! there will always be an ID on this specifice line rendered-->
 <!--        <td><a routerLink="/flights" (click)="delete(flight.id!)" class="btn btn-info">Delete Flight</a></td>-->

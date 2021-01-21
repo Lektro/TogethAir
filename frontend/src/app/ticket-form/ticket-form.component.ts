@@ -3,8 +3,6 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {FlightService} from "../service/flight.service";
 import {Ticket} from "../model/ticket";
 import {TicketService} from "../service/ticket.service";
-import {AirportService} from "../service/airport.service";
-import {AirlineService} from "../service/airline.service";
 import {Airport} from "../model/airport";
 import {Airline} from "../model/airline";
 import {Flight} from "../model/flight";
@@ -17,7 +15,7 @@ import {User} from "../model/user";
   styleUrls: ['./ticket-form.component.css']
 })
 export class TicketFormComponent implements OnInit {
-
+  id: string | null | undefined;
   ticket: Ticket;
   airline: Airline;
   flight: Flight;
@@ -46,6 +44,7 @@ export class TicketFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get('id');
     this.flightService.findAll().subscribe(flightData => this.flights = flightData)
     this.userService.findAll().subscribe(userData =>this.users = userData )
   }

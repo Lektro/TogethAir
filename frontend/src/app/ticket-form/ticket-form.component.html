@@ -12,7 +12,6 @@
           <th scope="col">Arrival Airport</th>
           <th scope="col">Airline</th>
           <th scope="col">Details</th>
-          <th scope="col">Book</th>
           <!--    <th scope="col">Update</th>-->
           <!--        <th scope="col">Delete</th>-->
         </tr>
@@ -30,7 +29,7 @@
           <td >{{ flight.arrivalAirport != undefined ? flight.arrivalAirport.name : "Arrival N/A" }}</td>
           <td>{{ flight.airline!= undefined ? flight.airline.name :"Airline N/A" }}</td>
           <td><a [routerLink]="['/getFlightById', flight.id]" class="btn btn-info">Show Details</a></td>
-          <td><a routerLink="/addTicket" class="btn btn-info">Order Ticket</a></td>
+<!--          <td><a routerLink="/addTicket" class="btn btn-info">Order Ticket</a></td>-->
           <!--    <td><a routerLink="/flights" (click)="update(flight.id!)" class="btn btn-info">update Flight</a></td>-->
           <!--        assert not null on flight.id with ! there will always be an ID on this specifice line rendered-->
           <!--        <td><a routerLink="/flights" (click)="delete(flight.id!)" class="btn btn-info">Delete Flight</a></td>-->

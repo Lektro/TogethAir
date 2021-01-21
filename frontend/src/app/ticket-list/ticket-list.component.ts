@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "../service/user.service";
-import {User} from "../model/user";
 import {TicketService} from "../service/ticket.service";
 import {Ticket} from "../model/ticket";
-import {Flight} from "../model/flight";
-import {FlightService} from "../service/flight.service";
-import {AirlineService} from "../service/airline.service";
-import {Airline} from "../model/airline";
+
 
 @Component({
   selector: 'app-ticket-list',
@@ -26,6 +21,7 @@ export class TicketListComponent implements OnInit {
       this.tickets = ticketData
     });
   }
+
   delete(id: number) {
     // toPromise().then() closes the stream, subscribe does not close the stream
     this.ticketService.delete(id).toPromise().then(() => {

@@ -25,7 +25,7 @@ public class TicketRestController {
     public Ticket createTicket(@RequestBody Ticket ticket) { return ticketService.save(ticket); }
 
     @DeleteMapping("/tickets/{id}")
-    public void deleteFlight(@PathVariable Long id) {
+    public void deleteTicket(@PathVariable Long id) {
         ticketService.deleteById(id);
     }
 

@@ -20,12 +20,13 @@ export class FlightFormComponent implements OnInit {
   flights: Flight[] = [];
   airports: Airport[] = [];
   airlines: Airline[] = [];
-  departureTime: Date = new Date();
+  //departureTime: Date = new Date();
 
-  dateForm = new FormGroup({
+  //dateForm = new FormGroup({
     // ArrivalDate: new FormControl(this.departureTime.toISOString().split("T")[0]),
-    DepartureDate: new FormControl(this.departureTime.toISOString().split("T")[0])
-  });
+   // DepartureDate: new FormControl(this.departureTime.toISOString().split("T")[0])
+  //});
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -49,5 +50,6 @@ export class FlightFormComponent implements OnInit {
       this.airlineService.findAll().subscribe(airlineResult => this.airlines = airlineResult);
   }
   toggle(): void {}
+
 
 }

@@ -48,6 +48,3 @@ export class FlightDetailsComponent implements OnInit {
     })
   }
 }
-
-// on submit form with user details and ticket amount do the checks in the back end and post it. then give the user a succes message.
-// worry later about payment method let's just make the ticket on a specific User first

@@ -6,16 +6,14 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 </head>
 <!--navbar section-->
 <div class="navbar-container">
   <nav class="navbar fixed-top navbar-dark bg-dark">
     <a class="navbar-brand" href="http://localhost:4200/">TogethAir</a>
-      <form action="/addUser">
-        <input type="text" placeholder="Username" name="username">
-        <input type="text" placeholder="Password" name="psw">
-        <button type="submit ">Login</button>
-      </form>
+
     <a href="http://localhost:4200/logout" class="btn btn-info">Log Out</a>
   </nav>
 </div>
@@ -26,9 +24,9 @@
 <!--    admin panel sits inside the app root. I might want to make a different landing on the app component-->
       <app-root></app-root>
       <div class="jumbotron bg-transparent">
-        <div class="container">
-          <h1 class="display-4 text-black">TogethAir We Will Find You That Bargain Flight</h1>
-          <p class="lead">More than a thousand flights offered at the lowest possible price.</p>
+        <div class="container jumboLanding">
+          <h1 class="display-4 text-black text-center">TogethAir We Will Find That Bargain Flight</h1>
+          <p class="lead text-center">More than a thousand flights offered at the lowest possible price.</p>
         </div>
       </div>
     </body>

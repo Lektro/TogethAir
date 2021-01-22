@@ -37,16 +37,4 @@ export class FlightListComponent implements OnInit {
       return this.ngOnInit();
     })
   }
-  // needs to have a valid userId before we can create the ticket
-/*  orderTickets(id: number) {
-    this.ticketService.create(this.id).subscribe(flightData => {
-      this.flight = flightData;
-    })
-  }*/
-/*
-  update(id: number): {
-    this.flightService.update(id).toPromise().then(() => {
-    // redraws the table after delete
-    this.router.navigate(['/flights/{id}']))
-  }*/
 }

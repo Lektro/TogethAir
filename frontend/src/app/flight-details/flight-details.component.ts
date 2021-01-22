@@ -11,9 +11,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class FlightDetailsComponent implements OnInit {
 
-  // typescript needs a new object for some reason
   flight: Flight = new Flight();
-  // airports: Airport[] = [];
   public id!: number;
 
   constructor(private activatedRoute: ActivatedRoute, private flightService: FlightService, private airportsService: AirportService) {
@@ -29,9 +27,6 @@ export class FlightDetailsComponent implements OnInit {
       this.flight = flightData;
     })
 
-    /*    this.airportsService.findAll().subscribe((airportData: any) => {
-          this.airports = airportData
-        });*/
   }
 
   delete(id: number) {

@@ -12,7 +12,7 @@ export class TicketListComponent implements OnInit {
 
   id!: number;
   tickets: Ticket[] = [];
-  // I need to grab the other controllers aswell? the list does not get seeded yet
+
   constructor(private ticketService: TicketService) {
   }
 
@@ -23,10 +23,8 @@ export class TicketListComponent implements OnInit {
   }
 
   delete(id: number) {
-    // toPromise().then() closes the stream, subscribe does not close the stream
     this.ticketService.delete(id).toPromise().then(() => {
-      // redraws the table after delete
       return this.ngOnInit();
-    })
+    });
   }
 }

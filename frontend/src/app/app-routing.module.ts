@@ -30,7 +30,6 @@ const routes: Routes = [
     { path: 'deleteFlight', component: FlightListComponent },
     { path: 'getFlightById/:id', component: FlightDetailsComponent },
     { path: 'deleteTicket', component: TicketListComponent }
-
 ];
 
 @NgModule({

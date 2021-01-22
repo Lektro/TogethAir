@@ -19,6 +19,7 @@ import { FlightDetailsComponent } from './flight-details/flight-details.componen
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { TicketListComponent } from './ticket-list/ticket-list.component';
 
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -42,7 +43,7 @@ import { TicketListComponent } from './ticket-list/ticket-list.component';
     AirlineFormComponent,
     FlightDetailsComponent,
     FilterPipePipe,
-    TicketListComponent
+    TicketListComponent,
 
   ],
 

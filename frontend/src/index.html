@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <title>Frontend</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-
+<!--navbar section-->
 <div class="navbar-container">
   <nav class="navbar fixed-top navbar-dark bg-dark">
     <a class="navbar-brand" href="http://localhost:4200/">TogethAir</a>
@@ -16,26 +16,26 @@
         <input type="text" placeholder="Password" name="psw">
         <button type="submit ">Login</button>
       </form>
+    <a href="http://localhost:4200/logout" class="btn btn-info">Log Out</a>
   </nav>
 </div>
 <!--background image section-->
 <section class="view intro-2">
   <div class="full-bg-img mask rgba-gradient">
-
-
-
     <body>
+<!--    admin panel sits inside the app root. I might want to make a different landing on the app component-->
       <app-root></app-root>
       <div class="jumbotron bg-transparent">
         <div class="container">
           <h1 class="display-4 text-black">TogethAir We Will Find You That Bargain Flight</h1>
-          <p class="lead"></p>
+          <p class="lead">More than a thousand flights offered at the lowest possible price.</p>
         </div>
       </div>
     </body>
   </div>
 </section>
 
+<!--footer section-->
 <footer class="fixed-bottom bg-dark">
   <!-- Copyright -->
   <div class="text-center text-light" >
@@ -43,4 +43,5 @@
     <a class="text-light" href="http://localhost:4200/">TogethAir</a>
   </div>
 </footer>
+
 </html>

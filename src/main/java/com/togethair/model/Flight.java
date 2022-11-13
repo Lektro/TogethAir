@@ -1,6 +1,7 @@
 package com.togethair.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.hibernate.annotations.Formula;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -41,6 +42,8 @@ public class Flight {
     // vital for prototype but needs to be split into separate travel classes and figure out how to keep track of stock
     private int totalSeats;
 
+    // use formula to calc remaining seats, hardcoded for now since we need to get the amount of sold tickets from the database //
+    @Formula("TOTAL_SEATS - 5")
     private int totalAvailableSeats;
 
     private int totalEconomyClassSeats;

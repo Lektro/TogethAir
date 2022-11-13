@@ -11,14 +11,14 @@ import {Ticket} from "../model/ticket";
 export class TicketListComponent implements OnInit {
 
   id!: number;
-  tickets: Ticket[] = [];
+  tickets?: Ticket[] = [];
 
   constructor(private ticketService: TicketService) {
   }
 
   ngOnInit() {
     this.ticketService.findAll().toPromise().then((ticketData) => {
-      this.tickets = ticketData
+      this.tickets = ticketData;
     });
   }
 

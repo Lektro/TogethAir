@@ -25,20 +25,20 @@
       </thead>
       <tbody>
       <tr >
-        <td>{{ flight.id }}</td>
-        <td>{{ flight.advertisedPrice }} EURO</td>
-        <td>{{ flight.flightNumber }}</td>
-        <td>{{ flight.flightDuration }}</td>
-        <td>{{ flight.totalSeats }}</td>
-        <td>{{ flight.totalAvailableSeats }}</td>
+        <td> {{ flight.id }}</td>
+        <td> {{ flight.basePrice }} EURO</td>
+        <td> {{ flight.flightNumber }}</td>
+        <td> {{ flight.flightDuration }}</td>
+        <td> {{ flight.totalSeats }}</td>
+        <td> {{ flight.totalAvailableSeats }}</td>
         <!--        *ngIf only displays on actual value's and otherwise skips check happens on front end part -->
         <!--        ternary if statement to display a default value if departureAirport equals undefined-->
         <!--        condition ? exprIfTrue : exprIfFalse-->
-        <td >{{ flight.departureAirport != undefined ? flight.departureAirport.name : "Departure N/A" }}</td>
-        <td >{{ flight.arrivalAirport != undefined ? flight.arrivalAirport.name : "Arrival N/A" }}</td>
+        <td> {{ flight.departureAirport != undefined ? flight.departureAirport.name : "Departure N/A" }}</td>
+        <td> {{ flight.arrivalAirport != undefined ? flight.arrivalAirport.name : "Arrival N/A" }}</td>
         <td> {{ flight.airline!= undefined ? flight.airline.name :"Airline N/A" }}</td>
-        <td>{{ flight.departureTime | date:'medium' : '+2400' }}</td>
-        <td>{{ flight.arrivalTime | date:'medium' : '+2400'}}</td>
+        <td> {{ flight.departureTime | date:'medium' : '+2400' }}</td>
+        <td> {{ flight.arrivalTime | date:'medium' : '+2400'}}</td>
         <td><a routerLink="/flights" class="btn btn-info">Back To Flights Overview</a></td>
         <td><a [routerLink]="['/addTicket', flight.id]" class="btn btn-info">Order Ticket {{flight.flightNumber}}</a></td>
       </tr>

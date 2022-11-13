@@ -28,7 +28,7 @@
           <td>{{ ticket.user?.name }}</td>
           <td>{{ ticket.flight?.departureAirport?.name }}</td>
           <td>{{ ticket.flight?.arrivalAirport?.name }}</td>
-          <td>{{ ticket.flight?.advertisedPrice }}</td>
+          <td>{{ ticket.flight?.basePrice }}</td>
           <td>{{ ticket.flight?.airline?.name }}</td>
           <td>{{ ticket.paymentStatus }}</td>
           <td><a [routerLink]="['/getFlightById', ticket.flight?.id]" class="btn btn-info">Show Flight Details</a></td>

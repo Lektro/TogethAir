@@ -21,9 +21,9 @@
       <tbody>
       <tr *ngFor="let flight of flights" >
         <td>{{ flight.id }}</td>
-        <td>{{ flight.advertisedPrice }} EURO</td>
+        <td>{{ flight.basePrice }} EURO</td>
         <td>{{ flight.flightNumber }}</td>
-        <td>{{ flight.totalAvailableSeats }}</td>
+        <td>{{ flight.totalSeats }}</td>
 <!--        *ngIf only displays on actual value's and otherwise skips check happens on front end part -->
 <!--        ternary if statement to display a default value if departureAirport equals undefined-->
 <!--        condition ? exprIfTrue : exprIfFalse-->
